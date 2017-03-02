@@ -42,9 +42,13 @@ class machin:
                 if step%20 == 0:
                     print(step, sess.run(self.cost), sess.run(self.weight), sess.run(self.bias))
 
+                    # # graph for
+                    # plt.plot(self.x_data, self.y_data, 'ro', label='data')
+                    # plt.plot(self.x_data, sess.run(self.weight) * self.x_data + sess.run(self.bias), label='Hypothesis')
+                    # plt.legend()
+                    # plt.show()
 
-
-            # graph for
+                    # graph for
             plt.plot(self.x_data, self.y_data, 'ro', label = 'data')
             plt.plot(self.x_data, sess.run(self.weight)*self.x_data+sess.run(self.bias), label = 'Hypothesis')
             plt.legend()

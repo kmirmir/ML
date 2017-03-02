@@ -2,6 +2,9 @@
 import tensorflow as tf
 from matplotlib import pyplot as plt
 
+# this source is one-variable linear regression
+# i do modulationa in the
+
 class machineLearning:
 
 
@@ -41,13 +44,27 @@ class machineLearning:
                 print(step, self.sess.run(self.cost, feed_dict={self.x_data: self.input_x_data, self.y_data: self.input_y_data}), self.sess.run(self.weight), self.sess.run(self.bias))
 
 
-    def show_tensor(self):
-        print(self.x_data, self.y_data, self.learning_rate)
-
     def set_test_data(self, input_x):
-        print(self.sess.run(self.hypothesis, feed_dict={self.x_data : input_x}))
+        self.test_input_x_data = input_x
+        self.test_data = self.sess.run(self.hypothesis, feed_dict={self.x_data : self.test_input_x_data})
+        print(self.test_data)
 
+    def session_close(self):
+        self.sess.close()
 
+    def show_set_data_to_graph(self):
+        # graph for
+        plt.plot(self.input_x_data, self.input_y_data, 'ro', label='data')
+        plt.plot(self.input_x_data, self.sess.run(self.weight) * self.input_x_data + self.sess.run(self.bias), label='Hypothesis')
+        plt.legend()
+        plt.show()
+
+    def show_test_data_to_graph(self):
+        # graph for
+        plt.plot(self.test_input_x_data, self.test_data, 'ro', label='data')
+        plt.plot(self.test_input_x_data, self.sess.run(self.weight) * self.test_input_x_data + self.sess.run(self.bias), label='Hypothesis')
+        plt.legend()
+        plt.show()
 
 
 if __name__ == '__main__':
@@ -55,5 +72,9 @@ if __name__ == '__main__':
 
     kihoon.set_data([1, 2, 3], [2, 4, 6])
     kihoon.learning(0.1)
+    kihoon.show_set_data_to_graph()
 
     kihoon.set_test_data([5., 7., 9.])
+    kihoon.show_test_data_to_graph()
+
+    kihoon.session_close()
