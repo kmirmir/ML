@@ -21,18 +21,23 @@ class linearRegression:
     def __init__(self, feature):
         self.W_val = []
         self.cost_val = []
+        self.feature = feature
 
         self.learning_x_data = tf.placeholder(tf.float32)
         self.learning_y_data = tf.placeholder(tf.float32)
 
-        self.weight = tf.Variable(tf.random_uniform([1,1], -1.0, 1.0))
-        self.bias = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
 
-        if feature == "one_variable":
+        if self.feature == "one_variable":
+            self.weight = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
+            self.bias = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
+
             self.hypothesis = self.weight * self.learning_x_data + self.bias
 
-        elif feature == "multi_variable":
-            pass
+        elif self.feature == "multi_variable":
+            self.weight = tf.Variable(tf.random_uniform([1,len(self.learning_x_data)], -1.0, 1.0))
+            # here is why no bias?
+
+            self.hypothesis = tf.matmul(self.weight, self.learning_x_data)
 
         else:
             pass
@@ -69,10 +74,21 @@ class linearRegression:
         self.input_x_data = input_x_data
         self.input_y_data = input_y_data
 
+    # 파일에서 데이터 가지고와서 돌려도 에러 뜸. /2017/3/6 pm10;00
     def set_data_loadFile_default(self):
-        file_data = np.loadtxt('')
-        self.input_x_data = file_data[0:-1]
-        self.input_y_data = file_data[-1]
+        if self.feature == "one_variable":
+            file_data = np.loadtxt('training_one_variable.txt', unpack=True, dtype='float32')
+            self.input_x_data = file_data[0:-1]
+            self.input_y_data = file_data[-1]
+
+        elif self.feature == "multi_variable":
+            file_data = np.loadtxt('training_multi_variable.txt', unpack=True, dtype='float32')
+            self.input_x_data = file_data[0:-1]
+            self.input_y_data = file_data[-1]
+
+        else:
+            text_error = "no feature"
+            print(text_error)
 
     def set_data_loadFile_with_path(self, file_path):
         pass
@@ -81,7 +97,9 @@ class linearRegression:
         pass
 
     def set_test_data_default(self):
-        pass
+        self.test_input_x_data = [7., 9., 11.]
+        self.test_data = self.sess.run(self.hypothesis,
+                                       feed_dict={self.learning_x_data: self.test_input_x_data})
 
     def set_test_data_input(self):
         pass
@@ -94,8 +112,6 @@ class linearRegression:
         learning(self, learning_rate) learning_rate 학습율을 직접 입력받을 수 있게 한다.
     """
 
-    # def learning(self):
-    #     pass
 
     def learning(self, learning_rate):
         for step in range(2001):
@@ -104,10 +120,11 @@ class linearRegression:
                                      self.learning_y_data: self.input_y_data,
                                      self.learning_rate: learning_rate})
 
+            # 이 주석을 해제하면 에러가 뜬다.
             self.W_val.append(self.sess.run(self.weight))
-            self.cost_val.append(self.sess.run(self.cost),
-                                 feed_dict={self.learning_x_data: self.input_x_data,
-                                            self.learning_y_data: self.input_y_data})
+            self.cost_val.append(self.sess.run(self.cost,
+                                               feed_dict={self.learning_x_data: self.input_x_data,
+                                                                     self.learning_y_data: self.input_y_data}))
 
             if step % 20 == 0:
                 print("step: ",  step,
@@ -121,20 +138,57 @@ class linearRegression:
     """
 
     def show_input_data(self):
-        plt.plot(self.input_x_data, self.input_y_data, 'ro')
-        plt.show()
+        if self.feature == "one_variable":
+            plt.plot(self.input_x_data, self.input_y_data, 'ro')
+            plt.plot(self.input_x_data, self.sess.run(self.weight) * self.input_x_data + self.sess.run(self.bias), label='h')
+            plt.legend()
+            plt.show()
+
+        elif self.feature == "multi_variable":
+            pass
+
+        else:
+            text_error1 = "do not run show_input_data(self) method"
+            text_error2 = "because graph is possible to show 2 dimension graph"
+            print(text_error1 + "\n" + text_error2)
 
     def show_test_data(self):
-        plt.plot(self.test_input_x_data, self.test_input_y_data, 'ro')
-        plt.plot(self.test_input_x_data, )
+        if self.feature == "one_variable":
+            plt.plot(self.test_input_x_data, self.test_data, 'ro')
+            plt.plot(self.test_input_x_data, self.sess.run(self.weight) * self.test_input_x_data + self.sess.run(self.bias), label='h')
+            plt.legend()
+            plt.show()
+
+        elif self.feature == "multi_variabl":
+            pass
+
+        else:
+            text1 = "do not run show_input_data(self) method"
+            text2 = "because graph is possible to show 2 dimension graph"
+            print(text1 + "\n" + text2)
 
     def show_cost_data(self):
-        pass
+        plt.plot(self.W_val, self.cost_val, 'ro')
+        plt.xlabel("weight")
+        plt.ylabel("cost")
+        plt.legend()
+        plt.show()
 
 
 
 if __name__ == '__main__':
-    kihoon = linearRegression("one_variable")
-    kihoon.set_data_default()
-    kihoon.learning(0.1)
-    kihoon.show_input_data()
+
+    # 이 부분은 one variable linear regression을 진행했을 때 소스
+
+    # kihoon = linearRegression("one_variable")
+    # kihoon.set_data_default()
+    # kihoon.learning(0.1)
+    # kihoon.show_input_data()
+    # kihoon.show_cost_data()
+    #
+    # kihoon.set_test_data_default()
+    # kihoon.show_test_data()
+
+    # one variable linear regerssion finish
+
+    narae = linearRegression("multi_variable")
