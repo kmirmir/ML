@@ -1,9 +1,9 @@
-import regression
+import library_regression
 
-from regression import linearRegression
+from library_regression import linearRegression
 
 if __name__ == '__main__':
-    kihoon = regression.linearRegression()
+    kihoon = library_regression.linearRegression()
     kihoon.set_data()
 
     kihoon2 = linearRegression()

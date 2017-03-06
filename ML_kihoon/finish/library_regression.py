@@ -14,7 +14,6 @@ class linearRegression:
 
     """
         init에서는 텐서플로우에서 구성하는 구성문들을 넣어 진행한다.
-        __init__(self) 를 사용하면 default로 one-variable로 진행을 한다
         __init__(self, one_or_multi) 를 사용하면 one variable인지 multi variable인지 명시할 수 있다.
     """
 
@@ -161,9 +160,9 @@ class linearRegression:
                                                                      self.learning_y_data: self.input_y_data}))
 
             if step % 20 == 0:
-                print("step: ",  step,
-                      "weight: ", self.sess.run(self.weight),
-                      "cost: ", self.sess.run(self.cost,
+                print("step:",  step,
+                      " weight:", self.sess.run(self.weight),
+                      " cost:", self.sess.run(self.cost,
                                                feed_dict={self.learning_x_data: self.input_x_data,
                                                           self.learning_y_data: self.input_y_data}))
 
