@@ -34,9 +34,16 @@ class linearRegression:
             self.hypothesis = self.weight * self.learning_x_data + self.bias
 
         elif self.feature == "multi_variable":
-            self.weight = tf.Variable(tf.random_uniform([1,len(self.learning_x_data)], -1.0, 1.0))
+            # 주석 해제 시, 에러 남. 2017/03/06 pm 11:20
+            # self.len_x_data = tf.placeholder(tf.int32)
+            self.weight = tf.Variable(tf.random_uniform([1,3], -1.0, 1.0))
+            # self.weight = tf.Variable(tf.random_uniform([1,self.len_x_data.eval(self.sess)], -1.0, 1.0))
             # here is why no bias?
 
+            # 230줄 set_data_default 주석을 풀었을 때 에러가 난다
+            # 왜인지 보니 https://www.tensorflow.org/api_docs/python/tf/matmul
+            # 행렬의 곱에서 1,3 이면 3, 1이 되어야 하는데 그렇게 안되어있는 것 같음
+            # 에러 난 시각 . 2017/03/07 pm 11:41
             self.hypothesis = tf.matmul(self.weight, self.learning_x_data)
 
         else:
@@ -67,14 +74,26 @@ class linearRegression:
     """
 
     def set_data_default(self):
-        self.input_x_data = [1.,2.,3.]
-        self.input_y_data = [2.,4.,6.]
+        if self.feature == "one_variable":
+            self.input_x_data = [1.,2.,3.]
+            self.input_y_data = [2.,4.,6.]
+
+        elif self.feature == "multi_variable":
+            self.input_x_data = [[1.,1.,1.,1.],
+                                 [1.,0.,3.,5.],
+                                 [0.,2.,0.,0.]]
+            self.input_y_data = [1.,2.,3.,5.]
+
+        else:
+            pass
 
     def set_data_input(self, input_x_data, input_y_data):
         self.input_x_data = input_x_data
         self.input_y_data = input_y_data
 
     # 파일에서 데이터 가지고와서 돌려도 에러 뜸. /2017/3/6 pm10;00
+    # one and multi 둘 다 에러가 뜬다.
+    # 아마 내가 생각하기로는 learning에서 weight의 배열을 만들 때, 텐서 값으로 들어가서 그런듯 싶다.
     def set_data_loadFile_default(self):
         if self.feature == "one_variable":
             file_data = np.loadtxt('training_one_variable.txt', unpack=True, dtype='float32')
@@ -85,6 +104,7 @@ class linearRegression:
             file_data = np.loadtxt('training_multi_variable.txt', unpack=True, dtype='float32')
             self.input_x_data = file_data[0:-1]
             self.input_y_data = file_data[-1]
+            self.len_input_x_data = len(self.input_x_data)
 
         else:
             text_error = "no feature"
@@ -97,9 +117,17 @@ class linearRegression:
         pass
 
     def set_test_data_default(self):
-        self.test_input_x_data = [7., 9., 11.]
-        self.test_data = self.sess.run(self.hypothesis,
-                                       feed_dict={self.learning_x_data: self.test_input_x_data})
+        if self.feature == "one_variable":
+            self.test_input_x_data = [7., 9., 11.]
+            self.test_data = self.sess.run(self.hypothesis,
+                                           feed_dict={self.learning_x_data: self.test_input_x_data})
+            print("predict : ", self.test_data)
+
+        elif self.feature == "multi_variable":
+            self.test_input_x_data = [1.,0.,3.,5.]
+            self.test_input_x_data = self.sess.run(self.hypothesis,
+                                                   feed_dict={self.learning_x_data: self.test_input_x_data})
+            print("predict : ", self.test_data)
 
     def set_test_data_input(self):
         pass
@@ -115,12 +143,18 @@ class linearRegression:
 
     def learning(self, learning_rate):
         for step in range(2001):
-            self.sess.run(self.train,
-                          feed_dict={self.learning_x_data: self.input_x_data,
-                                     self.learning_y_data: self.input_y_data,
-                                     self.learning_rate: learning_rate})
+            if self.feature == "one_variable":
+                self.sess.run(self.train,
+                              feed_dict={self.learning_x_data: self.input_x_data,
+                                         self.learning_y_data: self.input_y_data,
+                                         self.learning_rate: learning_rate})
+            elif self.feature == "multi_variable":
+                self.sess.run(self.train,
+                              feed_dict={self.learning_x_data: self.input_x_data,
+                                         self.learning_y_data: self.input_y_data,
+                                         self.learning_rate: learning_rate,
+                                        })
 
-            # 이 주석을 해제하면 에러가 뜬다.
             self.W_val.append(self.sess.run(self.weight))
             self.cost_val.append(self.sess.run(self.cost,
                                                feed_dict={self.learning_x_data: self.input_x_data,
@@ -144,8 +178,8 @@ class linearRegression:
             plt.legend()
             plt.show()
 
-        elif self.feature == "multi_variable":
-            pass
+        # elif self.feature == "multi_variable":
+        #     pass
 
         else:
             text_error1 = "do not run show_input_data(self) method"
@@ -159,8 +193,8 @@ class linearRegression:
             plt.legend()
             plt.show()
 
-        elif self.feature == "multi_variabl":
-            pass
+        # elif self.feature == "multi_variabl":
+        #     pass
 
         else:
             text1 = "do not run show_input_data(self) method"
@@ -192,3 +226,9 @@ if __name__ == '__main__':
     # one variable linear regerssion finish
 
     narae = linearRegression("multi_variable")
+    narae.set_data_default()
+    narae.learning(0.1)
+    narae.show_input_data()
+
+    # narae.set_test_data_default()
+
