@@ -37,12 +37,6 @@ class multiLinearRegression:
             if step % 20 == 0:
                 print(step, self.sess.run(self.cost), self.sess.run(self.weight))
 
-    def show_cost(self):
-        plt.plot(self.weightVal, self.costVal, 'ro')
-        plt.xlabel('weight')
-        plt.ylabel('cost')
-        plt.show()
-
 if __name__ == '__main__':
     kihoon = multiLinearRegression()
     kihoon.learning(0.1)

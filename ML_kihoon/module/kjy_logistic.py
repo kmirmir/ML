@@ -20,13 +20,14 @@ class LogisticClassification:
     sess= None
 
 
-
     def __init__(self,x_data,y_data):
+
         y_len = len(y_data)
         x_len = len(x_data)
         self.x_data = x_data
         self.y_data = y_data
         soft_max = False
+
         try:
             x = x_data[0][0]
             self.X = tf.placeholder(tf.float32,[None, y_len])

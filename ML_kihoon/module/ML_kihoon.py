@@ -8,7 +8,6 @@ import numpy as np
 
 class machineLearning:
 
-
     def set_data(self, x_data, y_data):
         self.input_x_data = [1, 2, 3]
         self.input_y_data = [2, 4, 6]
@@ -25,8 +24,6 @@ class machineLearning:
         # for graphs
         self.W_val = []
         self.cost_val = []
-
-
 
         self.x_data = tf.placeholder(tf.float32)
         self.y_data = tf.placeholder(tf.float32)
