@@ -25,6 +25,7 @@ sess = tf.Session()
 sess.run(init)
 print(len_data)
 print(len_data.get_shape())
+#텐서모양
 print(len_data.value())
 #이게 텐서 안에 있는 값을 가져오는 코드임
 print(len_data.eval(sess))

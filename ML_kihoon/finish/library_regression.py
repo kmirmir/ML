@@ -22,8 +22,10 @@ class linearRegression:
         self.cost_val = []
         self.feature = feature
 
-        self.learning_x_data = tf.placeholder(tf.float32)
-        self.learning_y_data = tf.placeholder(tf.float32)
+        # self.learning_x_data = tf.placeholder(tf.float32,[3,4])
+# shape를 지정해주어야 한다. 근데 숫자 말고 none, none을 쓰면 된다.
+        self.learning_x_data = tf.placeholder(tf.float32, [None, None])
+        self.learning_y_data = tf.placeholder(tf.float32, [None])
 
 
         if self.feature == "one_variable":
@@ -123,8 +125,10 @@ class linearRegression:
             print("predict : ", self.test_data)
 
         elif self.feature == "multi_variable":
-            self.test_input_x_data = [1.,0.,3.,5.]
-            self.test_input_x_data = self.sess.run(self.hypothesis,
+            self.test_input_x_data = [[1.,1.,1.,1.],
+                                 [1.,0.,3.,5.],
+                                 [0.,2.,0.,0.]]
+            self.test_data = self.sess.run(self.hypothesis,
                                                    feed_dict={self.learning_x_data: self.test_input_x_data})
             print("predict : ", self.test_data)
 
@@ -229,5 +233,5 @@ if __name__ == '__main__':
     narae.learning(0.1)
     narae.show_input_data()
 
-    # narae.set_test_data_default()
+    narae.set_test_data_default()
 

@@ -133,6 +133,7 @@ if __name__ == '__main__':
     # kihoon.set_data_default()
     kihoon.set_data_loadFile()
     kihoon.learning(0.1)
+
     # 에러 난다. 2017/03/07 am 01:09
     # kihoon.show_input_data()
     # kihoon.show_cost_data()
