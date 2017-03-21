@@ -217,14 +217,14 @@ if __name__ == '__main__':
 
     # 이 부분은 one variable linear regression을 진행했을 때 소스
 
-    # kihoon = linearRegression("one_variable")
-    # kihoon.set_data_default()
-    # kihoon.learning(0.1)
-    # kihoon.show_input_data()
-    # kihoon.show_cost_data()
-    #
-    # kihoon.set_test_data_default()
-    # kihoon.show_test_data()
+    kihoon = linearRegression("one_variable")
+    kihoon.set_data_default()
+    kihoon.learning(0.1)
+    kihoon.show_input_data()
+    kihoon.show_cost_data()
+
+    kihoon.set_test_data_default()
+    kihoon.show_test_data()
 
     # one variable linear regerssion finish
 
