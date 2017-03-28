@@ -21,6 +21,11 @@ a = tf.Variable(0.1)
 optimizer = tf.train.GradientDescentOptimizer(a)
 train = optimizer.minimize(cost)
 
+
+# add saver
+saver = tf.train.Saver()
+
+
 init = tf.initialize_all_variables()
 
 sess = tf.Session()
@@ -28,5 +33,8 @@ sess.run(init)
 
 for step in range(2001):
     sess.run(train)
-    if step % 20 == 0:
+    if step % 300 == 0:
         print (step, sess.run(cost), sess.run(W))
+        saver.save(sess, 'my-model', global_step=step)
+
+sess.close()
