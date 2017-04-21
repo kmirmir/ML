@@ -95,7 +95,7 @@ public class ProductDaoTest {
         productDao.add(product);
         productDao.delete(id);
 
-        Product addProduct = productDao.get(id);
-        assertThat(addProduct, nullValue());
+        Product deleteProduct = productDao.get(id);
+        assertThat(deleteProduct, nullValue());
     }
 }

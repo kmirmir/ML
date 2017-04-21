@@ -24,8 +24,9 @@ public class ProductDao {
 
         try {
             connection = dataSource.getConnection();
-            preparedStatement = connection.prepareStatement("select * from product where id = ?");
-            preparedStatement.setLong(1, id);
+            StatementStrategy statementStrategy = new GetUserStatementStrategy(id);
+            preparedStatement = statementStrategy.makeStatement(connection);
+
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
 
@@ -64,6 +65,7 @@ public class ProductDao {
     }
 
 
+
     public void add(Product product) throws ClassNotFoundException, SQLException {
 
 
@@ -72,13 +74,8 @@ public class ProductDao {
 
         try {
             connection = dataSource.getConnection();
-
-            preparedStatement = connection.prepareStatement("insert into product (id, title, price) VALUES (?,?,?)");
-            preparedStatement.setLong(1, product.getId());
-            preparedStatement.setString(2, product.getTitle());
-            preparedStatement.setInt(3, product.getPrice());
-
-            preparedStatement.executeUpdate();
+            StatementStrategy statementStrategy = new AddUserStatementStrtegy(product);
+            preparedStatement = statementStrategy.makeStatement(connection);
 
 
 
@@ -104,6 +101,7 @@ public class ProductDao {
 
 
     }
+
 
     public void update(Product product) throws ClassNotFoundException, SQLException {
 
@@ -112,13 +110,9 @@ public class ProductDao {
 
         try {
             connection = dataSource.getConnection();
+            StatementStrategy statementStrategy = new UpdateUserStatementStrategy(product);
+            preparedStatement = statementStrategy.makeStatement(connection);
 
-            preparedStatement = connection.prepareStatement("update product set title = ?, price = ? where id = ?");
-            preparedStatement.setString(1, product.getTitle());
-            preparedStatement.setInt(2, product.getPrice());
-            preparedStatement.setLong(3, product.getId());
-
-            preparedStatement.executeUpdate();
 
 
 
@@ -144,6 +138,7 @@ public class ProductDao {
 
 
     }
+
 
     public void delete(Long id)  throws ClassNotFoundException, SQLException {
 
@@ -153,10 +148,8 @@ public class ProductDao {
 
         try {
             connection = dataSource.getConnection();
-
-            preparedStatement = connection.prepareStatement("delete from product where id = ?");
-            preparedStatement.setLong(1, id);
-            preparedStatement.executeUpdate();
+            StatementStrategy statementStrategy = new DeleteUserStatementStrategy(id);
+            preparedStatement = statementStrategy.makeStatement(connection);
 
 
 
@@ -182,4 +175,5 @@ public class ProductDao {
 
 
     }
+
 }
