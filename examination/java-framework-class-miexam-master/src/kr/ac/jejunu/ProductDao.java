@@ -1,39 +1,53 @@
 package kr.ac.jejunu;
 
-import javax.sql.DataSource;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import java.sql.*;
 
 public class ProductDao {
 
 
-    JdbcContext jdbcContext;
+    JdbcTemplate jdbcTemplate;
 
     public ProductDao() {
 
     }
 
-    public void setJdbcContext(JdbcContext jdbcContext) {
-        this.jdbcContext = jdbcContext;
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
 
 
     public Product get(Long id) throws ClassNotFoundException, SQLException {
-        StatementStrategy statementStrategy = connection -> {
-            PreparedStatement preparedStatement;
-            preparedStatement = connection.prepareStatement("select * from product where id = ?");
-            preparedStatement.setLong(1, id);
-            return preparedStatement;
-        };
-        return jdbcContext.JdbcContextWithStatementForQuery(statementStrategy);
+        String sql = "select * from product where id = ?";
+        Object[] params = new Object[]{id};
+        Product product = null;
+
+        try {
+            product = jdbcTemplate.queryForObject(sql, params, (resultSet, i) -> {
+                Product product1 = new Product();
+                product1.setId(resultSet.getLong("id"));
+                product1.setTitle(resultSet.getString("title"));
+                product1.setPrice(resultSet.getInt("price"));
+
+                return product1;
+            });
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+
+        return product;
     }
+
 
 
     public void add(Product product) throws ClassNotFoundException, SQLException {
         String sql = "insert into product (id, title, price) VALUES (?,?,?)";
         Object[] params = new Object[]{product.getId(), product.getTitle(), product.getPrice()};
 
-        jdbcContext.update(sql, params);
+        jdbcTemplate.update(sql, params);
     }
 
 
@@ -42,13 +56,13 @@ public class ProductDao {
         String sql = "update product set title = ?, price = ? where id = ?";
         Object[] params = new Object[]{product.getTitle(), product.getPrice(), product.getId()};
 
-        jdbcContext.update(sql, params);
+        jdbcTemplate.update(sql, params);
     }
 
     public void delete(Long id)  throws ClassNotFoundException, SQLException {
         String sql = "delete from product where id = ?";
         Object[] params = new Object[]{id};
-        jdbcContext.update(sql, params);
+        jdbcTemplate.update(sql, params);
     }
 
 

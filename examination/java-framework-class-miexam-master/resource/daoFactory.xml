@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="productDao" class="kr.ac.jejunu.ProductDao">
-        <property name="jdbcContext" ref="jdbcContext"></property>
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
-    <bean id="jdbcContext" class="kr.ac.jejunu.JdbcContext">
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
