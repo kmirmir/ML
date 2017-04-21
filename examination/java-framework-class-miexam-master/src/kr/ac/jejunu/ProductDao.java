@@ -8,8 +8,6 @@ public class ProductDao {
 
     DataSource dataSource;
 
-
-
     public ProductDao() {
 
     }
@@ -80,6 +78,84 @@ public class ProductDao {
             preparedStatement.setString(2, product.getTitle());
             preparedStatement.setInt(3, product.getPrice());
 
+            preparedStatement.executeUpdate();
+
+
+
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+
+            if (preparedStatement!=null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw e;
+                }
+            }
+            if (connection!=null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    throw e;
+                }
+            }
+        }
+
+
+    }
+
+    public void update(Product product) throws ClassNotFoundException, SQLException {
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = dataSource.getConnection();
+
+            preparedStatement = connection.prepareStatement("update product set title = ?, price = ? where id = ?");
+            preparedStatement.setString(1, product.getTitle());
+            preparedStatement.setInt(2, product.getPrice());
+            preparedStatement.setLong(3, product.getId());
+
+            preparedStatement.executeUpdate();
+
+
+
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+
+            if (preparedStatement!=null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    throw e;
+                }
+            }
+            if (connection!=null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    throw e;
+                }
+            }
+        }
+
+
+    }
+
+    public void delete(Long id)  throws ClassNotFoundException, SQLException {
+
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = dataSource.getConnection();
+
+            preparedStatement = connection.prepareStatement("delete from product where id = ?");
+            preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
 
 
