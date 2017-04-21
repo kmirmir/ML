@@ -11,7 +11,7 @@ public class DaoFactory {
 
     @Bean
     public ProductDao productDao() {
-        return new ProductDao(connectionMaker());
+        return new ProductDao();
     }
 
     @Bean

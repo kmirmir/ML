@@ -8,8 +8,8 @@ public class ProductDao {
     ConnectionMaker connectionMaker;
 
 
-    public ProductDao(ConnectionMaker connectionMaker) {
-        this.connectionMaker = connectionMaker;
+    public ProductDao() {
+
     }
 
     public Product get(Long id) throws ClassNotFoundException, SQLException {
@@ -44,5 +44,7 @@ public class ProductDao {
     }
 
 
-
+    public void setConnectionMaker(ConnectionMaker connectionMaker) {
+        this.connectionMaker = connectionMaker;
+    }
 }
