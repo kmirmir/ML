@@ -1,35 +1,48 @@
 package kr.ac.jejunu;
 
+import javax.sql.DataSource;
 import java.sql.*;
 
 public class ProductDao {
 
 
-    ConnectionMaker connectionMaker;
+    DataSource dataSource;
+
 
 
     public ProductDao() {
 
     }
 
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public Product get(Long id) throws ClassNotFoundException, SQLException {
-        Connection connection = connectionMaker.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("select * from product where id = ?");
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Product product = null;
+
+        connection = dataSource.getConnection();
+        preparedStatement = connection.prepareStatement("select * from product where id = ?");
         preparedStatement.setLong(1, id);
-        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet = preparedStatement.executeQuery();
         resultSet.next();
-        Product product = new Product();
+        product = new Product();
         product.setId(resultSet.getLong("id"));
         product.setTitle(resultSet.getString("title"));
         product.setPrice(resultSet.getInt("price"));
         resultSet.close();
         preparedStatement.close();
         connection.close();
+        
         return product;
     }
 
+
     public void add(Product product) throws ClassNotFoundException, SQLException {
-        Connection connection = connectionMaker.getConnection();
+        Connection connection = dataSource.getConnection();
 
         PreparedStatement preparedStatement = connection.prepareStatement("insert into product (id, title, price) VALUES (?,?,?)");
         preparedStatement.setLong(1, product.getId());
@@ -41,10 +54,5 @@ public class ProductDao {
         preparedStatement.close();
         connection.close();
 
-    }
-
-
-    public void setConnectionMaker(ConnectionMaker connectionMaker) {
-        this.connectionMaker = connectionMaker;
     }
 }
