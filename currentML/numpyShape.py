@@ -1,15 +1,7 @@
-import numpy as np
+import matplotlib
 
-a = np.array([1,2,3])
-print(a.shape)
-print(a)
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
-b = np.array([
-    [1,2,3],
-    [4,5,6]
-])
-print(b.shape)
-print(b)
-
-txt = np.loadtxt('train.txt')
-print(txt)
+plt.plot([1, 2, 3], [0, 3, 7])
+plt.show()
