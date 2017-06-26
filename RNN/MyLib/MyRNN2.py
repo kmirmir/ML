@@ -66,7 +66,7 @@ class RNNLibrary:
     data_dim = 0
     output_dim = 0
 
-    hidden_dim = 10
+    # hidden_dim = 10
     # learning_rate = 0.01
     # iterations = 500
 
@@ -142,9 +142,9 @@ class RNNLibrary:
         # cost/loss
         self.loss = tf.reduce_sum(tf.square(self.hypothesis - self.Y))  # sum of the squares
 
-    def setHypothesis(self):
+    def setHypothesis(self, hidden_dim):
         cell = tf.contrib.rnn.BasicLSTMCell(
-            num_units=self.hidden_dim, state_is_tuple=True, activation=tf.tanh)
+            num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
         outputs, _states = tf.nn.dynamic_rnn(cell, self.X, dtype=tf.float32)
         self.hypothesis = tf.contrib.layers.fully_connected(
             outputs[:, -1], self.output_dim, activation_fn=None)  # We use the last cell's output
