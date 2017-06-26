@@ -77,10 +77,10 @@ class RNN:
         self.X = tf.placeholder(tf.float32, [None, seq_length, data_dim])
         self.Y = tf.placeholder(tf.float32, [None, 1])
 
-    def run(self, learning_rate, iterations):
+    def run(self, learning_rate, iterations, hidden_dim):
         # build a LSTM network
         cell = tf.contrib.rnn.BasicLSTMCell(
-            num_units=self.hidden_dim, state_is_tuple=True, activation=tf.tanh)
+            num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
         outputs, _states = tf.nn.dynamic_rnn(cell, self.X, dtype=tf.float32)
         Y_pred = tf.contrib.layers.fully_connected(
             outputs[:, -1], self.output_dim, activation_fn=None)  # We use the last cell's output
@@ -124,10 +124,10 @@ class RNN:
 
 if __name__ == '__main__':
     rnn = RNN()
-    rnn.setParams(5,7,1)
+    rnn.setParams(5,7,1) # input , seq length, output
     rnn.setPlaceholder(seq_length=rnn.seq_length, data_dim=rnn.data_dim)
     rnn.loadData('data-02-stock_daily.csv')
     rnn.buildData()
     rnn.buildTrainDataPercentage(70)
-    rnn.run(0.01, 500)
+    rnn.run(0.01, 500, 10)
     rnn.plt(rnn.testY, rnn.test_predict)
