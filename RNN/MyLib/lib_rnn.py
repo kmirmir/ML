@@ -1,63 +1,9 @@
-'''
-This script shows how to predict stock prices using a basic RNN
-'''
 import tensorflow as tf
-import numpy as np
 import matplotlib
 from abc import abstractmethod
 
-
-
 matplotlib.use('TkAgg')
-import matplotlib.pyplot as plt
-
-class Database:
-    data = []
-    trainX = []
-    trainY = []
-    testX = []
-    testY = []
-
-    @abstractmethod
-    def init_dataset(self):
-        pass
-
-    def nomalization(self):
-        numerator = self.data - np.min(self.data, 0)
-        denominator = np.max(self.data, 0) - np.min(self.data, 0)
-        # noise term prevents the zero division
-        self.data = numerator / (denominator + 1e-7)
-
-    def reverse(self):
-        self.data = self.data[::-1]  # reverse order (chronically ordered)
-
-    def load(self, file_name = None, seq_length=None):
-        # Open, High, Low, Volume, Close
-        self.data = np.loadtxt(file_name, delimiter=',')
-
-        self.init_dataset()
-
-        x = self.data
-        y = self.data[:, [-1]]  # Close as label
-
-        # build a dataset
-        dataX = []
-        dataY = []
-
-        for i in range(0, len(y) - seq_length):
-            _x = x[i:i + seq_length]
-            _y = y[i + seq_length]  # Next close price
-            # print(_x, "->", _y)
-            dataX.append(_x)
-            dataY.append(_y)
-
-        # train/test split
-        train_size = int(len(dataY) * 0.7)
-        test_size = len(dataY) - train_size
-        self.trainX, self.testX = np.array(dataX[0:train_size]), np.array(
-            dataX[train_size:len(dataX)])
-        self.trainY, self.testY = np.array(dataY[0:train_size]), np.array(
-            dataY[train_size:len(dataY)])
+import matplotlib.pyplot as plot
 
 
 class RNNLibrary:
@@ -65,10 +11,6 @@ class RNNLibrary:
     seq_length = 0
     data_dim = 0
     output_dim = 0
-
-    # hidden_dim = 10
-    # learning_rate = 0.01
-    # iterations = 500
 
     hypothesis = None
     loss = None
@@ -78,6 +20,8 @@ class RNNLibrary:
     X = None
     Y = None
 
+    errors = []
+
     @abstractmethod
     def init_rnn_library(self):
         pass
@@ -86,9 +30,6 @@ class RNNLibrary:
         self.seq_length = seq_length
         self.data_dim = data_dim
         self.output_dim = output_dim
-        # seq_length = 7
-        # data_dim = 5
-        # output_dim = 1
 
     def setPlaceholder(self, seq_length=None, data_dim=None):
         # input place holders
@@ -99,10 +40,6 @@ class RNNLibrary:
         tf.set_random_seed(777)  # reproducibility
 
         self.init_rnn_library()
-        # build a LSTM network
-        # self.setHypothesis()
-        # self.setCostfunction()
-        # self.setOptimizer()
 
         self.sess = tf.Session()
         init = tf.global_variables_initializer()
@@ -113,8 +50,7 @@ class RNNLibrary:
             _, step_loss = self.sess.run([self.train, self.loss], feed_dict={
                 self.X: trainX, self.Y: trainY})
             # print("[step: {}] loss: {}".format(i, step_loss))
-
-        # self.prediction(testX, testY)
+            self.errors.append(step_loss)
 
     def prediction(self, testX, testY):
         # test 데이터를 이용해서 예측을 해보고 표로 나타내어본다
@@ -127,19 +63,19 @@ class RNNLibrary:
         rmse_val = self.sess.run(rmse, feed_dict={
             targets: testY, predictions: test_predict})
         # print("RMSE: {}".format(rmse_val))
+
         # Plot predictions
-        plt.plot(testY)
-        plt.plot(test_predict)
-        plt.xlabel("Time Period")
-        plt.ylabel("Stock Price")
-        plt.show()
+        plot.plot(testY)
+        plot.plot(test_predict)
+        plot.xlabel("Time Period")
+        plot.ylabel("Stock Price")
+        plot.show()
 
     def setOptimizer(self, learning_rate):
         self.optimizer = tf.train.AdamOptimizer(learning_rate)
         self.train = self.optimizer.minimize(self.loss)
 
     def setCostfunction(self):
-        # cost/loss
         self.loss = tf.reduce_sum(tf.square(self.hypothesis - self.Y))  # sum of the squares
 
     def setHypothesis(self, hidden_dim):
@@ -149,3 +85,12 @@ class RNNLibrary:
         self.hypothesis = tf.contrib.layers.fully_connected(
             outputs[:, -1], self.output_dim, activation_fn=None)  # We use the last cell's output
 
+    def showErrors(self):
+        attr = 'o-'  # 선 속성
+        x_label = ''
+        y_label = ''
+
+        plot.plot(self.errors, attr)
+        plot.xlabel(x_label)
+        plot.ylabel(y_label)
+        plot.show()

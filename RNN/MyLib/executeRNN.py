@@ -1,4 +1,5 @@
-from RNN.MyLib.MyRNN2 import Database, RNNLibrary
+from RNN.MyLib.lib_rnn import RNNLibrary
+from RNN.MyLib.lib_dataset import Database
 '''
 RNN
 1. setParams(input_dimension, sequence_length, output_dimension)
@@ -31,5 +32,6 @@ if __name__ == '__main__':
 
     rnn = RNN()
     rnn.learning(db.trainX, db.trainY, loop=500)
+    rnn.showErrors()
     rnn.prediction(db.testX, db.testY)
 
