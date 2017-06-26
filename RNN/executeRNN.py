@@ -20,11 +20,16 @@ class RNN(RNNLibrary):
     def init_rnn_library(self):
         self.setParams(seq_length=7, data_dim=5, output_dim=1)
         self.setPlaceholder(seq_length=rnn.seq_length, data_dim=rnn.data_dim)
+        self.setHypothesis()
+        self.setCostfunction()
+        self.setOptimizer(0.01)
+
 
 if __name__ == '__main__':
     db = DB()
     db.load('data-02-stock_daily.csv', seq_length=7)
 
     rnn = RNN()
-    rnn.run(db.trainX, db.trainY, db.testX, db.testY)
+    rnn.learning(db.trainX, db.trainY, loop=500)
+    rnn.prediction(db.testX, db.testY)
 
