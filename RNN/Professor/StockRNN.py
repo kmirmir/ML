@@ -1,7 +1,6 @@
-from RNN.lib_stock_rnn import StockRNN
+from RNN.Professor.lib_stock_rnn import StockRNN
 
 from RNN.Professor.lib_common_db import CommonDB
-
 
 class MyDB(CommonDB):
     def preprocesisng(self):
