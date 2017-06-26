@@ -22,17 +22,19 @@ class Database:
     def init_dataset(self):
         pass
 
-    def nomalization(self, data):
-        numerator = data - np.min(data, 0)
-        denominator = np.max(data, 0) - np.min(data, 0)
+    def nomalization(self):
+        numerator = self.data - np.min(self.data, 0)
+        denominator = np.max(self.data, 0) - np.min(self.data, 0)
         # noise term prevents the zero division
-        return numerator / (denominator + 1e-7)
+        self.data = numerator / (denominator + 1e-7)
+
+    def reverse(self):
+        self.data = self.data[::-1]  # reverse order (chronically ordered)
 
     def load(self, file_name = None, seq_length=None):
         # Open, High, Low, Volume, Close
         self.data = np.loadtxt(file_name, delimiter=',')
-        self.data = self.data[::-1]  # reverse order (chronically ordered)
-        # xy = self.nomalization(xy)
+
         self.init_dataset()
 
         x = self.data
@@ -71,6 +73,10 @@ class RNNLibrary:
     X = None
     Y = None
 
+    @abstractmethod
+    def init_rnn_library(self):
+        pass
+
     def setParams(self, seq_length, data_dim, output_dim):
         self.seq_length = seq_length
         self.data_dim = data_dim
@@ -85,6 +91,7 @@ class RNNLibrary:
         self.Y = tf.placeholder(tf.float32, [None, 1])
 
     def run(self, trainX=None, trainY=None, testX=None, testY=None):
+        self.init_rnn_library()
         # build a LSTM network
         cell = tf.contrib.rnn.BasicLSTMCell(
             num_units=self.hidden_dim, state_is_tuple=True, activation=tf.tanh)

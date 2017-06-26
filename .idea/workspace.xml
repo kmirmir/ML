@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4812b1d9-f894-487a-8d2d-64bba1a5b0cb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyRNN2.py" afterPath="$PROJECT_DIR$/RNN/MyRNN2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/executeRNN.py" afterPath="$PROJECT_DIR$/RNN/executeRNN.py" />
     </list>
@@ -29,8 +28,8 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#72#95#0" expanded="true" />
-                <marker date="1498462719000" expanded="true" signature="209:232" ph="..." />
-                <marker date="1498462719000" expanded="true" signature="454:649" ph="..." />
+                <marker date="1498463107000" expanded="true" signature="209:232" ph="..." />
+                <marker date="1498463107000" expanded="true" signature="448:669" ph="..." />
               </folding>
             </state>
           </provider>
@@ -39,8 +38,8 @@
       <file leaf-file-name="StockRNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RNN/Professor/StockRNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+            <state relative-caret-position="330">
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -63,8 +62,8 @@
       <file leaf-file-name="executeRNN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RNN/executeRNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+            <state relative-caret-position="405">
+              <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -727,10 +726,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyRNN2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#72#95#0" expanded="true" />
+            <marker date="1498463107000" expanded="true" signature="209:232" ph="..." />
+            <marker date="1498463107000" expanded="true" signature="448:669" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/Professor/lib_common_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/Professor/StockRNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        <state relative-caret-position="330">
+          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
@@ -747,32 +768,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyRNN2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#72#95#0" expanded="true" />
-            <marker date="1498462719000" expanded="true" signature="209:232" ph="..." />
-            <marker date="1498462719000" expanded="true" signature="454:649" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/Professor/lib_common_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-589">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/executeRNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="405">
+          <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
           <folding />
         </state>
       </provider>
