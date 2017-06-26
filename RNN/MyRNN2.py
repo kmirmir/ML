@@ -12,7 +12,7 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 class Database:
-    xy = []
+    data = []
     trainX = []
     trainY = []
     testX = []
@@ -28,15 +28,15 @@ class Database:
         # noise term prevents the zero division
         return numerator / (denominator + 1e-7)
 
-    def load(self, seq_length=None):
+    def load(self, file_name = None, seq_length=None):
         # Open, High, Low, Volume, Close
-        self.xy = np.loadtxt('data-02-stock_daily.csv', delimiter=',')
-        self.xy = self.xy[::-1]  # reverse order (chronically ordered)
+        self.data = np.loadtxt(file_name, delimiter=',')
+        self.data = self.data[::-1]  # reverse order (chronically ordered)
         # xy = self.nomalization(xy)
         self.init_dataset()
 
-        x = self.xy
-        y = self.xy[:, [-1]]  # Close as label
+        x = self.data
+        y = self.data[:, [-1]]  # Close as label
 
         # build a dataset
         dataX = []
@@ -60,15 +60,24 @@ class Database:
 
 class RNNLibrary:
     # train Parameters
-    seq_length = 7
-    data_dim = 5
+    seq_length = 0
+    data_dim = 0
+    output_dim = 0
+
     hidden_dim = 10
-    output_dim = 1
     learning_rate = 0.01
     iterations = 500
 
     X = None
     Y = None
+
+    def setParams(self, seq_length, data_dim, output_dim):
+        self.seq_length = seq_length
+        self.data_dim = data_dim
+        self.output_dim = output_dim
+        # seq_length = 7
+        # data_dim = 5
+        # output_dim = 1
 
     def setPlaceholder(self, seq_length=None, data_dim=None):
         # input place holders

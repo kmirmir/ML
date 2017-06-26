@@ -1,10 +1,9 @@
-
+from RNN.MyRNN2 import Database, RNNLibrary
 '''
 RNN
 1. setParams(input_dimension, sequence_length, output_dimension)
 2. setPlaceholder(
 '''
-from RNN.MyRNN2 import Database, RNNLibrary
 
 '''
 Dataset
@@ -18,13 +17,14 @@ Dataset
 '''
 class DB(Database):
     def init_dataset(self):
-        self.xy = self.nomalization(self.xy)
+        self.data = self.nomalization(self.data)
 
 if __name__ == '__main__':
     db = DB()
-    db.load(7)
+    db.load('data-02-stock_daily.csv', seq_length=7)
 
     rnn = RNNLibrary()
+    rnn.setParams(seq_length=7, data_dim=5, output_dim=1)
     rnn.setPlaceholder(seq_length=rnn.seq_length, data_dim=rnn.data_dim)
     rnn.run(db.trainX, db.trainY, db.testX, db.testY)
 
