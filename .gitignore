@@ -90,3 +90,8 @@ ENV/
 
 *.xml
 *.iml
+/RNN/data.xlsx
+RNN/.idea/
+RNN/data.xlsx
+/RNN/dataFullVersion.csv
+/RNN/data.csv

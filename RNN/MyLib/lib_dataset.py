@@ -30,7 +30,8 @@ class Database:
 
         x = self.data
         y = self.data[:, [-1]]  # Close as label
-
+        print(x)
+        print(y)
         # build a dataset
         dataX = []
         dataY = []

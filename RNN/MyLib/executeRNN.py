@@ -12,6 +12,7 @@ Dataset
 
 'data-02-stock_daily.csv'
 '''
+
 class DB(Database):
     def init_dataset(self):
         self.reverse()
@@ -19,8 +20,8 @@ class DB(Database):
 
 class RNN(RNNLibrary):
     def init_rnn_library(self):
-        self.setParams(seq_length=7, data_dim=5, output_dim=1)
-        self.setPlaceholder(seq_length=rnn.seq_length, data_dim=rnn.data_dim)
+        self.setParams(seq_length=7, input_dim=5, output_dim=1)
+        self.setPlaceholder(seq_length=rnn.seq_length, input_dim=rnn.input_dim)
         self.setHypothesis(hidden_dim=10)
         self.setCostfunction()
         self.setOptimizer(0.01)
