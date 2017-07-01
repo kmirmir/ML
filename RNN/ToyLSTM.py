@@ -1,30 +1,17 @@
 import csv
 import numpy as np
 
-list = np.loadtxt("output.csv", delimiter=',')
-# result = []
-#
-# for i in range(len(list)):
-#     result.append(list[i].replace("\"", ""))
-#
-# print(result)
-# for i in range(len(result)):
-#     print(result[i])
-# #
-# f = open('output.csv', 'w', encoding='utf-8', newline='')
-# wr = csv.writer(f)
-# for i in range(len(result)):
-#     wr.writerow(result[i])
-# f.close()
+# 날짜,시간,수평일사량,경사일사량,외기온도,모듈온도,VCB출력,ACB출력,인버터츨력
+
+list = np.loadtxt("finishData.csv", delimiter=',')
 
 dataX = list
 dataY = list[:,[-1]]
 
-for i in range(len(dataX)):
+for i in range(24*2):
     print(dataX[i])
 
 print("==========")
-print("==========")
 
-for i in range(len(dataY)):
+for i in range(24*2):
     print(dataY[i])

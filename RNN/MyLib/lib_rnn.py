@@ -1,3 +1,4 @@
+import sys
 import tensorflow as tf
 import matplotlib
 from abc import abstractmethod
@@ -36,7 +37,7 @@ class RNNLibrary:
         self.X = tf.placeholder(tf.float32, [None, seq_length, input_dim])
         self.Y = tf.placeholder(tf.float32, [None, 1])
 
-    def learning(self, trainX=None, trainY=None, loop=None):
+    def learning(self, trainX=None, trainY=None, loop=None, check_step=0):
         tf.set_random_seed(777)  # reproducibility
 
         # init_rnn_library()를 이용해서 rnn model을 setting할 수 있다
@@ -53,6 +54,12 @@ class RNNLibrary:
             # print("[step: {}] loss: {}".format(i, step_loss))
             self.errors.append(step_loss)
 
+            if i % check_step == 0:
+                sys.stdout.write('.')
+                sys.stdout.flush()
+
+        print('\nDone!\n')
+
     def prediction(self, testX, testY):
         # test 데이터를 이용해서 예측을 해보고 표로 나타내어본다
         # RMSE
@@ -61,16 +68,22 @@ class RNNLibrary:
         rmse = tf.sqrt(tf.reduce_mean(tf.square(targets - predictions)))
         # Test step
         # 테스트 x 데이터를 놓고 테스트 x에 대한 결과 값을 test_predict에 저장한다
+        # 24*7*4*0.3 = 테스트 사이즈
+        # 24*7*4*0.7 = 트레인 사이즈
         test_predict = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
         rmse_val = self.sess.run(rmse, feed_dict={
             targets: testY, predictions: test_predict})
-        # print("RMSE: {}".format(rmse_val))
+        print("RMSE: {}".format(rmse_val))
 
         # Plot predictions
+        # 주황색이 testY, 파랑색이 predict된 값들
+        # plot.plot(testY, c="b", lw=5)
         plot.plot(testY)
         plot.plot(test_predict)
-        plot.xlabel("Time Period")
-        plot.ylabel("Stock Price")
+        # plot.xlim(0, 100)
+        # plot.ylim(-1, 9)
+        plot.xlabel("Test Size (orange is TestY, blue is Predict")
+        plot.ylabel("Invertor Output")
         plot.show()
 
     def setHypothesis(self, hidden_dim):

@@ -97,3 +97,5 @@ RNN/data.xlsx
 /RNN/data.csv
 /RNN/data2.csv
 RNN/data2.csv
+
+*.csv
