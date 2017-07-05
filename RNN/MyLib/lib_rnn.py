@@ -94,13 +94,18 @@ class RNNLibrary:
 
     def setHypothesis(self, hidden_dim):
         number_layer = 2
-        cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
-        # cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.5)
-        cell2 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
-        multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell, cell2])
+        def lstm_cell():
+            cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh, reuse=tf.get_variable_scope().reuse)
+            return tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.5)
 
-        # 왜 이걸로 하면 안되는가?
-        # multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell] * number_layer, state_is_tuple=True)
+        cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.5)
+        cell2 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        cell3 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell, cell2, cell3])
+
+        # 됨요~ reuse 써야 되고이 그 함수를 불러오면 잘 되긴하네 근데 loss는 너무 높다
+        # multi_cell = tf.nn.rnn_cell.MultiRNNCell([lstm_cell() for _ in range(number_layer)], state_is_tuple=True)
 
         outputs, _states = tf.nn.dynamic_rnn(multi_cell, self.X, dtype=tf.float32)
 
