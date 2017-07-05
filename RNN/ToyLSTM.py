@@ -15,3 +15,6 @@ print("==========")
 
 for i in range(24*2):
     print(dataY[i])
+
+
+

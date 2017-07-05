@@ -23,6 +23,11 @@ class RNNLibrary:
 
     errors = []
 
+    def __init__(self):
+        self._num_layers = None
+        self._hidden_size = None
+        self._dropout_placeholder = None
+
     @abstractmethod
     def init_rnn_library(self):
         pass
@@ -51,7 +56,7 @@ class RNNLibrary:
         # Training step
         for i in range(loop):
             _, step_loss = self.sess.run([self.train, self.cost], feed_dict={self.X: trainX, self.Y: trainY})
-            # print("[step: {}] loss: {}".format(i, step_loss))
+            print("[step: {}] loss: {}".format(i, step_loss))
             self.errors.append(step_loss)
 
             if i % check_step == 0:
@@ -63,6 +68,7 @@ class RNNLibrary:
     def prediction(self, testX, testY):
         # test 데이터를 이용해서 예측을 해보고 표로 나타내어본다
         # RMSE
+        # Question !!! 이것은 왜 필요한것인가
         targets = tf.placeholder(tf.float32, [None, 1])
         predictions = tf.placeholder(tf.float32, [None, 1])
         rmse = tf.sqrt(tf.reduce_mean(tf.square(targets - predictions)))
@@ -87,9 +93,18 @@ class RNNLibrary:
         plot.show()
 
     def setHypothesis(self, hidden_dim):
-        cell = tf.contrib.rnn.BasicLSTMCell(
-            num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
-        outputs, _states = tf.nn.dynamic_rnn(cell, self.X, dtype=tf.float32)
+        number_layer = 2
+        cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        # cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.5)
+        cell2 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell, cell2])
+
+        # 왜 이걸로 하면 안되는가?
+        # multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell] * number_layer, state_is_tuple=True)
+
+        outputs, _states = tf.nn.dynamic_rnn(multi_cell, self.X, dtype=tf.float32)
+
+
         self.hypothesis = tf.contrib.layers.fully_connected(
             outputs[:, -1], self.output_dim, activation_fn=None)  # We use the last cell's output
 
