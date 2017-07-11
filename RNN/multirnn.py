@@ -1,74 +1,93 @@
-#Source code with the blog post at http://monik.in/a-noobs-guide-to-implementing-rnn-lstm-using-tensorflow/
 import numpy as np
-import random
-from random import shuffle
-import tensorflow as tf
 
-# from tensorflow.models.rnn import rnn_cell
-# from tensorflow.models.rnn import rnn
-
-NUM_EXAMPLES = 10000
-
-train_input = ['{0:020b}'.format(i) for i in range(2**20)]
-shuffle(train_input)
-train_input = [map(int,i) for i in train_input]
-ti  = []
-for i in train_input:
-    temp_list = []
-    for j in i:
-            temp_list.append([j])
-    ti.append(np.array(temp_list))
-train_input = ti
-
-train_output = []
-for i in train_input:
-    count = 0
-    for j in i:
-        if j[0] == 1:
-            count+=1
-    temp_list = ([0]*21)
-    temp_list[count]=1
-    train_output.append(temp_list)
-
-test_input = train_input[NUM_EXAMPLES:]
-test_output = train_output[NUM_EXAMPLES:]
-train_input = train_input[:NUM_EXAMPLES]
-train_output = train_output[:NUM_EXAMPLES]
-
-print( "test and training data loaded")
+# 다 가져온 후에 앞에꺼 뺀거부터 쭉 가져오기
+import sys
+import csv
 
 
-data = tf.placeholder(tf.float32, [None, 20,1]) #Number of examples, number of input, dimension of each input
-target = tf.placeholder(tf.float32, [None, 21])
-num_hidden = 24
-cell = tf.nn.rnn_cell.LSTMCell(num_hidden,state_is_tuple=True)
-val, _ = tf.nn.dynamic_rnn(cell, data, dtype=tf.float32)
-val = tf.transpose(val, [1, 0, 2])
-last = tf.gather(val, int(val.get_shape()[0]) - 1)
-weight = tf.Variable(tf.truncated_normal([num_hidden, int(target.get_shape()[1])]))
-bias = tf.Variable(tf.constant(0.1, shape=[target.get_shape()[1]]))
-prediction = tf.nn.softmax(tf.matmul(last, weight) + bias)
-cross_entropy = -tf.reduce_sum(target * tf.log(tf.clip_by_value(prediction,1e-10,1.0)))
-optimizer = tf.train.AdamOptimizer()
-minimize = optimizer.minimize(cross_entropy)
-mistakes = tf.not_equal(tf.argmax(target, 1), tf.argmax(prediction, 1))
-error = tf.reduce_mean(tf.cast(mistakes, tf.float32))
+'''
+하루 24시간을 시퀀스로 넣는다. 아웃풋은 한 시간의 생산량을 예측한다.
+하루 24시간의 데이터들을 평균을 낸 후에 시퀀스로 한 주(seq_lenght=7)를 넣는다. 아웃풋은 하루의 생산량을 예측한다.
+한 주의 데이터들을 평균을 낸 후에 시퀀스로 한 달(seq_length=4)을 넣는다. 아웃풋은 한 주의 생산량을 예측한다.
+한 달의 데이터들을 평균을 낸 후에 시퀀스로 6개월(seq_length=6)을 넣는다. 아웃풋은 한 달의 생산량을 예측한다.
+'''
 
-init_op = tf.initialize_all_variables()
-sess = tf.Session()
-sess.run(init_op)
 
-batch_size = 50
-no_of_batches = int((len(train_input)) / batch_size)
-epoch = 100
-for i in range(epoch):
-    ptr = 0
-    for j in range(int(no_of_batches)):
-        inp, out = train_input[ptr:ptr+batch_size], train_output[ptr:ptr+batch_size]
-        ptr+=batch_size
-        sess.run(minimize,{data: inp, target: out})
-    print( "Epoch ",str(i))
-incorrect = sess.run(error,{data: test_input, target: test_output})
-print (sess.run(prediction,{data: [[[1],[0],[0],[1],[1],[0],[1],[1],[1],[0],[1],[0],[0],[1],[1],[0],[1],[1],[1],[0]]]}))
-print('Epoch {:2d} error {:3.1f}%'.format(i + 1, 100 * incorrect))
-sess.close()
+# 2번째 열만 가져오게
+# print(day[:, 1:2])
+# print("======")
+# result = 0
+# for i in range(len(day[:,1:2])):
+#     result += day[:, 1:2][i]
+#     print(day[:, 1:2][i])
+# print("====")
+# print(result)
+# print("Sum: {}".format(result))
+# divide = result/len(day[:, 1:2])
+# print(divide)
+# print("Divide: {}".format(divide))
+# print(int(divide))
+# 3번째 열만 가져오게
+# print(day[:, 2:3])
+# print(y)
+def getResultOfDataToSometing(something):
+
+    data = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/finishData.csv', delimiter=',')
+    x = data[:, 1:]
+    '''
+    something = 24 --> 하루로 묶은 것
+    '''
+    # something = 24
+    print(len(x) / something)
+
+    result = []
+    for i in range(int(len(x) / something)):
+        day = x[0 + (something * i):something + (something * i), :]
+        listOfResult = []
+
+        # 하루의 속성 한 줄씩 가져오는 것
+        # 하루만 된다
+        for a in range(1, 8):
+            temp = 0
+            # print("===start===")
+            for b in range(something):
+                temp += day[:, a:a + 1][b]
+
+            temp = float(temp / 12)
+            listOfResult.append(temp)
+
+        result.append(listOfResult)
+
+    return  result
+
+
+
+def writeCsv(filename):
+    global i
+    f = open(filename, 'w', encoding='utf-8', newline='')
+    wr = csv.writer(f)
+    for i in range(len(result)):
+        wr.writerow(result[i])
+    f.close()
+
+
+# 앞에는 x축(가로)을 다루고 뒤에는 y축(세로)을 다룬다
+# 날짜,시간,수평일사량,경사일사량,외기온도,모듈온도,VCB 출력,ACB 출력,인버터 츨력
+# 여기서 날짜를 뺀 모든 것을 가져오라고 함
+'''
+    something = 24 --> 하루로 묶은 것
+'''
+result = getResultOfDataToSometing(4)
+
+
+for i in range(len(result)):
+    print(result[i])
+    # print("result: {}".format(result[i]))
+
+print(len(result))
+
+
+filenmae = "output4.csv"
+
+
+writeCsv(filename=filenmae)

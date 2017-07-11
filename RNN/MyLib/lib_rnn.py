@@ -23,11 +23,6 @@ class RNNLibrary:
 
     errors = []
 
-    def __init__(self):
-        self._num_layers = None
-        self._hidden_size = None
-        self._dropout_placeholder = None
-
     @abstractmethod
     def init_rnn_library(self):
         pass
@@ -68,18 +63,23 @@ class RNNLibrary:
     def prediction(self, testX, testY):
         # test 데이터를 이용해서 예측을 해보고 표로 나타내어본다
         # RMSE
-        # Question !!! 이것은 왜 필요한것인가
+        # RMSE가 작을수록 좋은거!!!
         targets = tf.placeholder(tf.float32, [None, 1])
         predictions = tf.placeholder(tf.float32, [None, 1])
         rmse = tf.sqrt(tf.reduce_mean(tf.square(targets - predictions)))
+
         # Test step
         # 테스트 x 데이터를 놓고 테스트 x에 대한 결과 값을 test_predict에 저장한다
         # 24*7*4*0.3 = 테스트 사이즈
         # 24*7*4*0.7 = 트레인 사이즈
         test_predict = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
-        rmse_val = self.sess.run(rmse, feed_dict={
-            targets: testY, predictions: test_predict})
+        rmse_val = self.sess.run(rmse, feed_dict={targets: testY, predictions: test_predict})
+
+
         print("RMSE: {}".format(rmse_val))
+        print("RMSE: {:.2%}".format(rmse_val))
+        # print("RMSE: {:.2%}".format(rmse_val))
+
 
         # Plot predictions
         # 주황색이 testY, 파랑색이 predict된 값들
@@ -88,30 +88,38 @@ class RNNLibrary:
         plot.plot(test_predict)
         # plot.xlim(0, 100)
         # plot.ylim(-1, 9)
-        plot.xlabel("Test Size (orange is TestY, blue is Predict")
+        plot.xlabel("Test Size (blue is TestY, orange is Predict")
         plot.ylabel("Invertor Output")
         plot.show()
 
-    def setHypothesis(self, hidden_dim):
-        number_layer = 2
+    def setHypothesis(self, hidden_dim, layer = 1, isDropout = False, dropout_value = 1):
         def lstm_cell():
-            cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh, reuse=tf.get_variable_scope().reuse)
-            return tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.5)
+            cell = tf.contrib.rnn.BasicLSTMCell(
+                num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh, reuse=tf.get_variable_scope().reuse
+            )
+            if isDropout:
+                cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=dropout_value)
 
-        cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
-        cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.5)
-        cell2 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
-        cell3 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
-        multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell, cell2, cell3])
-
+            return cell
         # 됨요~ reuse 써야 되고이 그 함수를 불러오면 잘 되긴하네 근데 loss는 너무 높다
-        # multi_cell = tf.nn.rnn_cell.MultiRNNCell([lstm_cell() for _ in range(number_layer)], state_is_tuple=True)
+        multi_cell = tf.nn.rnn_cell.MultiRNNCell([lstm_cell() for _ in range(layer)], state_is_tuple=True)
 
+        # drop out이나 hidden dimension을 조절하고 싶다면 아래처럼 그냥 하나로 통일하고 돌리고 싶다면 위처럼
+        # dropout (keep_prob) rate  0.7~0.5 on training, but should be 1 for testing
+        cell = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        # cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=0.7)
+        cell2 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        # cell2 = tf.con®rnn_cell.DropoutWrapper(cell2, output_keep_prob=0.5)
+        # cell3 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        # cell4 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        # cell5 = tf.contrib.rnn.BasicLSTMCell(num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh)
+        # multi_cell = tf.nn.rnn_cell.MultiRNNCell([cell, cell2,cell3,cell4,cell5])
+
+        # 단일 셀만 돌릴거면 multi_cell --> cell로 바꿔주기만 하면 된다.
         outputs, _states = tf.nn.dynamic_rnn(multi_cell, self.X, dtype=tf.float32)
 
-
-        self.hypothesis = tf.contrib.layers.fully_connected(
-            outputs[:, -1], self.output_dim, activation_fn=None)  # We use the last cell's output
+        # We use the last cell's output
+        self.hypothesis = tf.contrib.layers.fully_connected(outputs[:, -1], self.output_dim, activation_fn=None)
 
     def setCostfunction(self):
         self.cost = tf.reduce_sum(tf.square(self.hypothesis - self.Y))  # sum of the squares

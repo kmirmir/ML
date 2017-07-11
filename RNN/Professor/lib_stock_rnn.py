@@ -47,7 +47,7 @@ class StockRNN:
         cell = tf.contrib.rnn.BasicLSTMCell(num_units=self.output_dim, state_is_tuple=True)  #output_dim = 3
         cell = tf.contrib.rnn.MultiRNNCell([cell] * 2, state_is_tuple=True)
         outputs, _states = tf.nn.dynamic_rnn(cell, self.X, dtype=tf.float32) #shape of X = (?, 7, 5)
-        #print('output', outputs) # 위 output_dim이 3일 때 3차원 출력이 seq_length(7)만큼 나옴
+        print('output', outputs) # 위 output_dim이 3일 때 3차원 출력이 seq_length(7)만큼 나옴
         last_output = outputs[:, -1]  # 3차원 출력 7개 중 가장 마지막 3차원 출력을 최종 출력으로 선택함. last_output shape=(?, 3)
 
         # Softmax layer (rnn_hidden_size -> num_classes)
@@ -98,8 +98,10 @@ class StockRNN:
         # RMSE
         predY = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
         rmse = tf.sqrt(tf.reduce_mean(tf.square(testY - predY))) # 차의 제곱의 평균의 sqrt
-        print("RMSE", self.sess.run(rmse))
+        accuracy = tf.reduce_mean(tf.cast(tf.equal(predY, testY), dtype=tf.float32))
 
+        print("RMSE", self.sess.run(rmse))
+        # print("Acc", self.sess.run(accuracy))
         plt.plot(testY)  # 실제
         plt.plot(predY)  # 예측
         plt.xlabel("Time Period")

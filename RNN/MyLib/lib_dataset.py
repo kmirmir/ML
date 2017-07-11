@@ -29,9 +29,9 @@ class Database:
         self.init_dataset()
 
         # 24 시간 = 하루  * 7일 = > 1 주일 * x => x 주일
-        data_length = 24 * 7 * 4 * month
-        x = self.data[:data_length]
-        y = self.data[:data_length, [-1]]  # Close as label
+        # data_length = 24 * 7 * 4 * month
+        x = self.data[:]
+        y = self.data[:, [-1]]  # Close as label
         # print(x)
         # print(y)
         # build a dataset
@@ -53,7 +53,7 @@ class Database:
         self.trainY, self.testY = np.array(dataY[0:train_size]), np.array(
             dataY[train_size:len(dataY)])
 
-        print("month : ", month)
-        print("total data size : ", data_length)
-        print("train data size : ", data_length * 0.7)
-        print("test data size : ", data_length * 0.3)
+        # print("month : ", month)
+        # print("total data size : ", data_length)
+        # print("train data size : ", data_length * 0.7)
+        # print("test data size : ", data_length * 0.3)
