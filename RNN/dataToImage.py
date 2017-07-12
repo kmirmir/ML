@@ -15,7 +15,7 @@ import matplotlib.pyplot as plot
 # print(df.info())
 
 
-data1 = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/output4.csv', delimiter=',')
+data1 = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/dataToDay.csv', delimiter=',')
 data2 = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/MyLib/dataToDay.csv', delimiter=',')
 data3 = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/MyLib/dataToHour.csv', delimiter=',')
 
@@ -32,5 +32,5 @@ def showImage(x, x_label):
 
 
 showImage(x1, "4 binding")
-showImage(x2, "24 binding")
-showImage(x3, "all 24hour")
+# showImage(x2, "24 binding")
+# showImage(x3, "all 24hour")

@@ -53,7 +53,8 @@ def getResultOfDataToSometing(something):
             for b in range(something):
                 temp += day[:, a:a + 1][b]
 
-            temp = float(temp / 12)
+            # # print(temp)
+            temp = float(temp)
             listOfResult.append(temp)
 
         result.append(listOfResult)
@@ -77,7 +78,7 @@ def writeCsv(filename):
 '''
     something = 24 --> 하루로 묶은 것
 '''
-result = getResultOfDataToSometing(4)
+result = getResultOfDataToSometing(12)
 
 
 for i in range(len(result)):
@@ -87,7 +88,7 @@ for i in range(len(result)):
 print(len(result))
 
 
-filenmae = "output4.csv"
+filenmae = "dataToDay.csv"
 
 
 writeCsv(filename=filenmae)

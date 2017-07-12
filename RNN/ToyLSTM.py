@@ -23,7 +23,7 @@ with tf.Session() as sess:
 
     for step in range(100):
         # step 4: 노드 추가
-        summary = sess.run(merged, feed_dict={X: step * 1.0, Y: 2.0})
+        summary = sess.run(merged, feed_dict={X: step * 2.0, Y: 3.0})
         writer.add_summary(summary, step)
 
 # step 5: 콘솔에서 명령 실행

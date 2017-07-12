@@ -7,9 +7,9 @@ class DB(Database):
 
 class RNN(RNNLibrary):
     def init_rnn_library(self):
-        self.setParams(seq_length=24, input_dim=9, output_dim=1)
+        self.setParams(seq_length=7, input_dim=7, output_dim=1)
         self.setPlaceholder(seq_length=rnn.seq_length, input_dim=rnn.input_dim)
-        self.setHypothesis(hidden_dim=10, layer=5)
+        self.setHypothesis(hidden_dim=10, layer=4)
         self.setCostfunction()
         self.setOptimizer(learning_rate=0.01)
 
@@ -17,14 +17,13 @@ class RNN(RNNLibrary):
 # 날짜,시간,수평일사량,경사일사량,외기온도,모듈온도,VCB 출력,ACB 출력,인버터 츨력
 # VCB = 발전기 출력 차단기 Vaccum Circuit Breacker
 # ACB = 기중 차단기 Air Circuit Breacker
-
 # 출력은 인버터 출력으로 함
 
 if __name__ == '__main__':
     db = DB()
-    db.load('/Users/masinogns/PycharmProjects/ML/RNN/MyLib/dataToHour.csv', seq_length=24)
+    db.load('/Users/masinogns/PycharmProjects/ML/RNN/MyLib/dataToFourHour.csv', seq_length=7)
 
     rnn = RNN()
-    rnn.learning(db.trainX, db.trainY, loop=1000, check_step=100)
+    rnn.learning(db.trainX, db.trainY, loop=100, total_epoch=3, check_step=100)
     rnn.showErrors()
     rnn.prediction(db.testX, db.testY)
