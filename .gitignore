@@ -97,6 +97,13 @@ RNN/data.xlsx
 /RNN/data.csv
 /RNN/data2.csv
 RNN/data2.csv
+/RNN/output4.csv
+/RNN/finishData.csv
+/RNN/exampleSplit.csv
+/RNN/dataToDay.csv
+/RNN/dataWeather.csv
+/RNN/MyLib/dataToFourHour.csv
+/RNN/MyLib/dataToDay.csv
+/RNN/MyLib/dataToHour.csv
 
-*.csv
 *.png

@@ -35,11 +35,11 @@ learning_rate = 0.001 * int(var2)
 if __name__ == '__main__':
     path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib'
     load_file_name = '/dataToFourHour.csv'
-    save_error_file_name = '/error/' + 'layer'+str(layer) + '/error' + 'lr' + str(learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) +'.png'
-    save_predict_file_name = '/predict/' + 'layer'+ str(layer) + '/predict' + 'lr' + str(learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) +'.png'
-    save_csv_file_name = '/output/'+ 'epoch' + str(epoch) +'.csv'
+    save_error_file_name = '/error/' + 'epoch' + str(epoch) + '/layer'+str(layer) + '/error' + 'lr' + str(learning_rate) + 'layer' + str(
+        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
+    save_predict_file_name = '/predict/' + 'epoch' + str(epoch) + '/layer'+str(layer) + '/predict' + 'lr' + str(learning_rate) + 'layer' + str(
+        layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) + '.png'
+    save_csv_file_name = '/output/' + 'epoch' + str(epoch) + '.csv'
 
     db = DB()
     db.load(path+load_file_name, seq_length=7)
