@@ -38,13 +38,11 @@ class RNNLibrary:
         self.X = tf.placeholder(tf.float32, [None, seq_length, input_dim])
         self.Y = tf.placeholder(tf.float32, [None, 1])
 
-    def setHypothesis(self, hidden_dim, layer=1, isDropout=False, dropout_value=1):
+    def setHypothesis(self, hidden_dim, layer=1):
         def lstm_cell():
             cell = tf.contrib.rnn.BasicLSTMCell(
                 num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh, reuse=tf.get_variable_scope().reuse
             )
-            if isDropout:
-                cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=dropout_value)
 
             return cell
 

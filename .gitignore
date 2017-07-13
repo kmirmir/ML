@@ -103,7 +103,6 @@ RNN/data2.csv
 /RNN/dataToDay.csv
 /RNN/dataWeather.csv
 /RNN/MyLib/dataToFourHour.csv
-/RNN/MyLib/dataToDay.csv
 /RNN/MyLib/dataToHour.csv
 
 *.png

@@ -25,20 +25,28 @@ var1 = sys.argv[1]
 var2 = sys.argv[2]
 
 
-epoch = 1
+epoch = 3
 hidden_dim = 10
 
 
 layer = int(var1)
-learning_rate = 0.001 * int(var2)
+learning_rate = 0.0001 * pow(10, int(var2))
 
 if __name__ == '__main__':
     path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib'
     load_file_name = '/dataToFourHour.csv'
-    save_error_file_name = '/error/' + 'epoch' + str(epoch) + '/layer'+str(layer) + '/error' + 'lr' + str(learning_rate) + 'layer' + str(
+    # save_error_file_name = '/error/' + 'error' + 'lr' + 'epoch' + str(epoch) +'layer' + str(
+    #     layer) +  str(learning_rate) + 'hidden' + str(hidden_dim) +  '.png'
+    # save_predict_file_name = '/predict/' + '/predict' + 'epoch' + str(epoch) + 'layer' + str(
+    #     layer) + 'lr' + str(learning_rate) + 'hidden' + str(hidden_dim) + '.png'
+    #
+    save_error_file_name = '/error/' + 'epoch' + str(epoch) + '/layer' + str(layer) + '/error' + 'lr' + str(
+        learning_rate) + 'layer' + str(
         layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
-    save_predict_file_name = '/predict/' + 'epoch' + str(epoch) + '/layer'+str(layer) + '/predict' + 'lr' + str(learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) + '.png'
+    save_predict_file_name = '/predict/' + 'epoch' + str(epoch) + '/layer' + str(layer) + '/predict' + 'lr' + str(
+        learning_rate) + 'layer' + str(
+        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
+
     save_csv_file_name = '/output/' + 'epoch' + str(epoch) + '.csv'
 
     db = DB()
@@ -60,4 +68,5 @@ if __name__ == '__main__':
     print("Epoch : {}".format(epoch))
     print("Layer : {}".format(layer))
     print("Learning rate : {}".format(learning_rate))
+    print("Loss : {}".format(rnn.errors[-1]))
     print("It is done")
