@@ -21,6 +21,7 @@ class RNNLibrary:
     X = None
     Y = None
 
+    rmsm_val = 0
     errors = []
     epoch_cost = []
 
@@ -70,7 +71,7 @@ class RNNLibrary:
         plot.xlabel(x_label)
         plot.ylabel(y_label)
         plot.savefig(error_save_filename)
-        plot.show()
+        # plot.show()
         plot.close()
 
     def learning(self, trainX=None, trainY=None, loop=None, total_epoch = 1, check_step=0):
@@ -90,6 +91,7 @@ class RNNLibrary:
                 # _, step_loss = self.sess.run([self.train, self.cost], feed_dict={self.X: trainX, self.Y: trainY})
                 # print("[step: {}] loss: {}".format(i, step_loss))
                 self.errors.append(loss)
+                # print("[loss : {}]".format(loss))
                 # total_cost += step_loss
                 self.epoch_cost.append(total_cost)
 
@@ -97,14 +99,15 @@ class RNNLibrary:
                     sys.stdout.write('.')
                     sys.stdout.flush()
 
+        # print("last error value : "+self.errors[-1])
         print('\nDone!\n')
 
     def prediction(self, testX, testY, predict_save_filename):
         test_predict = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
         rmse = tf.sqrt(tf.reduce_mean(tf.square(testY - test_predict)))  # 차의 제곱의 평균의 sqrt
-
-        print("RMSE: {:.2%}".format(self.sess.run(rmse)))
-        print("RMSE: ", self.sess.run(rmse))
+        self.rmse_val = self.sess.run(rmse)
+        print("RMSE: {:.2%}".format(self.rmse_val))
+        print("RMSE: {}".format(self.rmse_val))
 
         fig = plot.figure()
         plot.plot(testY, linestyle='-')
@@ -112,5 +115,5 @@ class RNNLibrary:
         plot.xlabel("Test Size (blue is TestY, orange is Predict")
         plot.ylabel("Invertor Output")
         plot.savefig(predict_save_filename)
-        plot.show()
+        # plot.show()
         plot.close()

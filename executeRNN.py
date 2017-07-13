@@ -20,21 +20,44 @@ class RNN(RNNLibrary):
 # VCB = 발전기 출력 차단기 Vaccum Circuit Breacker
 # ACB = 기중 차단기 Air Circuit Breacker
 # 출력은 인버터 출력으로 함
+import sys
+var1 = sys.argv[1]
+var2 = sys.argv[2]
 
+
+epoch = 1
 hidden_dim = 10
-layer = 4
-learning_rate = 0.01
+
+
+layer = int(var1)
+learning_rate = 0.001 * int(var2)
 
 if __name__ == '__main__':
     path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib'
     load_file_name = '/dataToFourHour.csv'
-    save_error_file_name = '/show/'+'error'+'lr'+str(learning_rate)+'layer'+str(layer)+'hidden'+str(hidden_dim)+'.png'
-    save_predict_file_name = '/show/'+'predict'+'lr'+str(learning_rate)+'layer'+str(layer)+'hidden'+str(hidden_dim)+'.png'
+    save_error_file_name = '/error/' + 'layer'+str(layer) + '/error' + 'lr' + str(learning_rate) + 'layer' + str(
+        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) +'.png'
+    save_predict_file_name = '/predict/' + 'layer'+ str(layer) + '/predict' + 'lr' + str(learning_rate) + 'layer' + str(
+        layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) +'.png'
+    save_csv_file_name = '/output/'+ 'epoch' + str(epoch) +'.csv'
 
     db = DB()
     db.load(path+load_file_name, seq_length=7)
 
     rnn = RNN()
-    rnn.learning(db.trainX, db.trainY, loop=100, total_epoch=1, check_step=100)
+    rnn.learning(db.trainX, db.trainY, loop=1000, total_epoch=epoch, check_step=100)
     rnn.showErrors(error_save_filename=path+save_error_file_name)
     rnn.prediction(db.testX, db.testY, predict_save_filename=path+save_predict_file_name)
+
+
+    import csv
+    f = open(path+save_csv_file_name, 'a', encoding='utf-8', newline='')
+    wr = csv.writer(f)
+    # Learning rate, the number of layer, hidden_dimension, loss
+    wr.writerow([epoch, layer, learning_rate, rnn.errors[-1], rnn.rmse_val, hidden_dim])
+    f.close()
+
+    print("Epoch : {}".format(epoch))
+    print("Layer : {}".format(layer))
+    print("Learning rate : {}".format(learning_rate))
+    print("It is done")
