@@ -25,7 +25,7 @@ var1 = sys.argv[1]
 var2 = sys.argv[2]
 
 
-epoch = 3
+epoch = 5
 hidden_dim = 10
 
 
