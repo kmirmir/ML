@@ -1,3 +1,4 @@
+import csv
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
@@ -69,25 +70,46 @@ def findFeatureOfWeather(cells):
             get_text = cells[i][a].get_text()
             # print(str(i) + "일 :" + get_text)
 
-            for i in range(len(feature)):
-                if feature[i] != get_text:
-                    feature.append(get_text)
+            if get_text in feature:
+                pass
+            else:
+                feature.append(get_text)
 
     print("finish find feature weather")
-    for i in range(len(feature)):
-        print(feature[i])
 
     return feature
 
-def printResultOfFind(feature):
+def organizeFeatureOfWeather(feature):
+    # 목록 뽑아놓은 거
+    list = ["비", "소낙눈", "박무", "연무", "소나기",
+            "황사", "안개", "천둥", "폭풍", "햇무리", "뇌전",
+            "번개", "달무리", "채운", "싸락눈",
+            "무지개", "소낙성진눈깨", "달코로나", "해코로나"]
+
+    for i in range(len(feature)):
+        for a in range(len(list)):
+            if list[a] in feature[i]:
+                feature[i] = feature[i].replace(list[a], "")
+
+    return feature
+
+def printResultOfFindFeature(feature):
     for i in range(len(feature)):
         print(feature[i])
 
-url = urlMaker(year=2012)
-cells = crawlingWeather(url)
-printResultOfWeather(cells)
+def writeCsv(filename, list):
+    f = open(filename, 'w', encoding='utf-8', newline='')
+    wr = csv.writer(f)
+    for i in range(len(list)):
+        wr.writerow(list[i])
+    f.close()
+
+# url = urlMaker(year=2014)
+# cells = crawlingWeather(url)
+# printResultOfWeather(cells)
 
 # feature = findFeatureOfWeather(cells)
-# printResultOfFind(feature)
-
+# printResultOfFindFeature(feature)
+# feature = organizeFeatureOfWeather(feature)
+# printResultOfFindFeature(feature)
 
