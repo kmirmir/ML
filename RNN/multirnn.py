@@ -1,7 +1,4 @@
 import numpy as np
-
-# 다 가져온 후에 앞에꺼 뺀거부터 쭉 가져오기
-import sys
 import csv
 
 
@@ -12,24 +9,6 @@ import csv
 한 달의 데이터들을 평균을 낸 후에 시퀀스로 6개월(seq_length=6)을 넣는다. 아웃풋은 한 달의 생산량을 예측한다.
 '''
 
-
-# 2번째 열만 가져오게
-# print(day[:, 1:2])
-# print("======")
-# result = 0
-# for i in range(len(day[:,1:2])):
-#     result += day[:, 1:2][i]
-#     print(day[:, 1:2][i])
-# print("====")
-# print(result)
-# print("Sum: {}".format(result))
-# divide = result/len(day[:, 1:2])
-# print(divide)
-# print("Divide: {}".format(divide))
-# print(int(divide))
-# 3번째 열만 가져오게
-# print(day[:, 2:3])
-# print(y)
 def getResultOfDataToSometing(something):
 
     data = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/finishData.csv', delimiter=',')

@@ -22,7 +22,7 @@ def _onehot_data(data):
     # print(len(onehot_encoded))
     # invert first example
     inverted = label_encoder.inverse_transform([argmax(onehot_encoded[4, :])])
-    print(inverted)
+    # print(inverted)
 
     return onehot_encoded
 
@@ -34,13 +34,15 @@ def _onehot_data(data):
 
 
 # 목록 뽑아놓은거
-list = ["비", "소낙눈", "박무", "연무", "소나기",
-            "황사", "안개", "천둥", "폭풍", "햇무리", "뇌전",
-            "번개", "달무리", "채운", "싸락눈",
-            "무지개", "소낙성진눈깨", "달코로나", "해코로나"]
+list = ["비", "소낙눈", "박무", "연무", "소나기", "황사", "안개", "천둥", "폭풍", "햇무리", "뇌전","번개", "달무리", "채운", "싸락눈","무지개", "소낙성진눈깨", "달코로나", "해코로나"]
 # list = ["비","박무","연무","소나기"]
-# list_onehot_data = _onehot_data(list)
-# print(list_onehot_data)
-element = "비"
+list_onehot_data = _onehot_data(list)
+print(list_onehot_data)
+element = list[3]
+print(element)
+
 if element in list:
-    print(list.index(element))
+    list_onehot_data[list.index(element)]
+    # print(list.index(element))
+    # print(list_onehot_data[list.index(element)])
+

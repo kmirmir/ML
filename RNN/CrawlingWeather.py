@@ -53,8 +53,6 @@ def printResultOfWeather(cells):
         print("======" + str(a) + "월======")
 
         for i in range(1, 32):  # 1일부터 31일까지 반복문을 실행한다
-            # 1 월달 날씨들
-            # print(cells[1][6].get_text())
             compareString = cells[i][a].get_text()
             if ord(compareString[0]) != 160:
                 print(str(i) + "일 :" + cells[i][a].get_text())
@@ -62,6 +60,13 @@ def printResultOfWeather(cells):
                 print(str(i) + "일 :맑음")
 
 def findFeatureOfWeather(cells):
+    '''
+    날씨 정보에서 feature들을 빼 내려고 만든 함수
+    feature 리스트에 없는 값은 더하고 리스트에 값이 있다면 계속 진행한다
+
+    :param cells:
+    :return:
+    '''
     feature = []
 
     for a in range(1, 13):  # 1월부터 12월까지 반복문을 실행한다
@@ -81,6 +86,12 @@ def findFeatureOfWeather(cells):
 
 def organizeFeatureOfWeather(feature):
     # 목록 뽑아놓은 거
+    '''
+    뽑아놓은 list 목록에 있는 값이 있다면 공뱅으로 replace시킨다
+    만약 출력에 아무것도 안나온다면 feature 뽑기가 제대로 된 것이다
+    :param feature:
+    :return:
+    '''
     list = ["비", "소낙눈", "박무", "연무", "소나기",
             "황사", "안개", "천둥", "폭풍", "햇무리", "뇌전",
             "번개", "달무리", "채운", "싸락눈",
@@ -104,9 +115,9 @@ def writeCsv(filename, list):
         wr.writerow(list[i])
     f.close()
 
-# url = urlMaker(year=2014)
-# cells = crawlingWeather(url)
-# printResultOfWeather(cells)
+url = urlMaker(year=2014)
+cells = crawlingWeather(url)
+printResultOfWeather(cells)
 
 # feature = findFeatureOfWeather(cells)
 # printResultOfFindFeature(feature)
