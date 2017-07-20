@@ -49,10 +49,11 @@ def printResultOfWeather(cells):
      :param i 일을 나타낸다
      a 월 i 일 ok?
     '''
-    for a in range(1, 13):  # 1월부터 12월까지 반복문을 실행한다
+    month = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31']
+    for a in range(0, 12):  # 1월부터 12월까지 반복문을 실행한다
         print("======" + str(a) + "월======")
 
-        for i in range(1, 32):  # 1일부터 31일까지 반복문을 실행한다
+        for i in range(1, int(month[a])+1):  # 1일부터 31일까지 반복문을 실행한다
             compareString = cells[i][a].get_text()
             if ord(compareString[0]) != 160:
                 print(str(i) + "일 :" + cells[i][a].get_text())
@@ -68,10 +69,11 @@ def findFeatureOfWeather(cells):
     :return:
     '''
     feature = []
+    month = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31']
 
-    for a in range(1, 13):  # 1월부터 12월까지 반복문을 실행한다
+    for a in range(0, 12):  # 1월부터 12월까지 반복문을 실행한다
         # print("======" + str(a) + "월======")
-        for i in range(1, 32):  # 1일부터 31일까지 반복문을 실행한다
+        for i in range(1, month[a]):  # 1일부터 31일까지 반복문을 실행한다
             get_text = cells[i][a].get_text()
             # print(str(i) + "일 :" + get_text)
 
