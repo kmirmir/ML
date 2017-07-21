@@ -32,11 +32,11 @@ def _combine_two_list(_one_list, _two_list):
 
     if len(_one_list) == len(_two_list):
 
-        for i in range(len(_one)):
-            combine.append(_one[i])
+        for i in range(len(_one_list)):
+            combine.append(_one_list[i])
 
         for i in range(len(combine)):
-            combine[i] += _two[i]
+            combine[i] += _two_list[i]
 
     else:
         print("Incorrect value length")

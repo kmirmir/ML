@@ -26,16 +26,15 @@ def urlMaker(year):
                "obs=90&x=29&y=14"
 
     url = domainName + identify
-    # print("url making : " + url)
 
     return url
 
 def crawlingWeather(url):
-    # print("result of url maker : " + url)
     html = urlopen(url)
     bsObject = BeautifulSoup(html.read(), "html.parser")
     table = bsObject.find("table", {"class": "table_develop"})
     cells = []
+
     for row in table.findAll("tr"):
         cells.append(row.findAll("td"))
 
@@ -48,17 +47,23 @@ def printResultOfWeather(cells):
      :param a 월을 나타낸다
      :param i 일을 나타낸다
      a 월 i 일 ok?
+
+     2017/7/20 : 이제 원핫인코딩으로 바꿔
     '''
     month = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31']
-    for a in range(0, 12):  # 1월부터 12월까지 반복문을 실행한다
-        print("======" + str(a) + "월======")
 
-        for i in range(1, int(month[a])+1):  # 1일부터 31일까지 반복문을 실행한다
+    result = []
+    for a in range(1, 13):  # 1월부터 12월까지 반복문을 실행한다
+        # print("======" + str(a) + "월======")
+        for i in range(1, int(month[a-1])+1):  # 1일부터 31일까지 반복문을 실행한다
             compareString = cells[i][a].get_text()
             if ord(compareString[0]) != 160:
-                print(str(i) + "일 :" + cells[i][a].get_text())
+                # print(str(i) + "일 :" + cells[i][a].get_text())
+                result.append(cells[i][a].get_text())
             else:
-                print(str(i) + "일 :맑음")
+                # print(str(i) + "일 :맑음")
+                result.append("맑음")
+    return result
 
 def findFeatureOfWeather(cells):
     '''
@@ -117,9 +122,12 @@ def writeCsv(filename, list):
         wr.writerow(list[i])
     f.close()
 
-url = urlMaker(year=2014)
-cells = crawlingWeather(url)
-printResultOfWeather(cells)
+
+
+
+# url = urlMaker(year=2014)
+# cells = crawlingWeather(url)
+# printResultOfWeather(cells)
 
 # feature = findFeatureOfWeather(cells)
 # printResultOfFindFeature(feature)
