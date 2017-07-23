@@ -11,7 +11,7 @@ import csv
 
 def getResultOfDataToSometing(something):
 
-    data = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/finishData.csv', delimiter=',')
+    data = np.loadtxt('/Users/masinogns/PycharmProjects/ML/RNN/_correct_data.csv', delimiter=',')
     x = data[:, 1:]
     '''
     something = 24 --> 하루로 묶은 것

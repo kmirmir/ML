@@ -28,7 +28,7 @@ class Database:
         self.init_dataset()
 
         x = self.data[:]
-        y = self.data[:, [-1]]  # Close as label
+        y = self.data[:, [8]]  # Close as label
         # build a dataset
         dataX = []
         dataY = []

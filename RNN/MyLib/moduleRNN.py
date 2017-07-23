@@ -9,7 +9,7 @@ class DB(Database):
 
 class RNN(RNNLibrary):
     def init_rnn_library(self):
-        self.setParams(seq_length=7, input_dim=7, output_dim=1)
+        self.setParams(seq_length=24, input_dim=9, output_dim=1)
         self.setPlaceholder(seq_length=rnn.seq_length, input_dim=rnn.input_dim)
         self.setHypothesis(hidden_dim=hidden_dim, layer=layer)
         self.setCostfunction()
@@ -22,27 +22,28 @@ class RNN(RNNLibrary):
 # 출력은 인버터 출력으로 함
 
 hidden_dim = 10
-layer = 1
-learning_rate = 0.001
-epoch = 1;
+layer = 3
+learning_rate = 0.01
+epoch = 5
 
 if __name__ == '__main__':
-    path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib'
+    correct_file = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/the_data.csv'
+    path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/'
     load_file_name = '/dataToFourHour.csv'
-    save_error_file_name = '/error/' + 'layer'+str(layer) + '/error' + 'lr' + str(learning_rate) + 'layer' + str(
+    save_error_file_name = 'error' + 'lr' + str(learning_rate) + 'layer' + str(
         layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) +'.png'
-    save_predict_file_name = '/predict/' + 'layer'+ str(layer) + '/predict' + 'lr' + str(learning_rate) + 'layer' + str(
+    save_predict_file_name = 'predict' + 'lr' + str(learning_rate) + 'layer' + str(
         layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) +'.png'
     save_csv_file_name = '/output/'+ 'epoch' + str(epoch) +'.csv'
 
+
     db = DB()
-    db.load(path+load_file_name, seq_length=7)
+    db.load(correct_file, seq_length=24)
 
     rnn = RNN()
-    rnn.learning(db.trainX, db.trainY, loop=10, total_epoch=epoch, check_step=100)
-    rnn.showErrors(error_save_filename=path+save_error_file_name)
-    rnn.prediction(db.testX, db.testY, predict_save_filename=path+save_predict_file_name)
-
+    rnn.learning(db.trainX, db.trainY, loop=1000, total_epoch=epoch, check_step=100)
+    rnn.showErrors(error_save_filename=path + save_error_file_name)
+    rnn.prediction(db.testX, db.testY, predict_save_filename=path + save_predict_file_name)
 
     import csv
     f = open(path+save_csv_file_name, 'a', encoding='utf-8', newline='')

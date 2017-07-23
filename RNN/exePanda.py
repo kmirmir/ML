@@ -30,10 +30,10 @@ def dataToGraphXeLayerYeLoss(epoch):
     ax1.set_xlabel('The number of layer')
     ax1.set_ylabel('Loss')
     plt.legend(loc='upper left')
-    # plt.show()
+    plt.show()
 
-    plt.savefig(save_file_name)
-    plt.close('all')
+    # plt.savefig(save_file_name)
+    # plt.close('all')
 
 
 
@@ -56,10 +56,10 @@ def dataToGraphXeEpochYeLoss(layer):
     ax1.set_xlabel('Epoch')
     ax1.set_ylabel('Loss')
     plt.legend(loc='upper left')
-    # plt.show()
+    plt.show()
 
-    plt.savefig(save_file_name)
-    plt.close('all')
+    # plt.savefig(save_file_name)
+    # plt.close('all')
 
 for i in range(1, 6):
     dataToGraphXeLayerYeLoss(i)

@@ -59,7 +59,7 @@ class RNNLibrary:
         self.optimizer = tf.train.AdamOptimizer(learning_rate)
         self.train = self.optimizer.minimize(self.cost)
 
-    def showErrors(self, error_save_filename):
+    def showErrors(self, error_save_filename=None):
         # attr = 'o-'  # 선 속성
         fig = plot.figure()
         x_label = ''
@@ -68,8 +68,8 @@ class RNNLibrary:
         plot.plot(self.errors)
         plot.xlabel(x_label)
         plot.ylabel(y_label)
-        plot.savefig(error_save_filename)
-        # plot.show()
+        # plot.savefig(error_save_filename)
+        plot.show()
         plot.close()
 
     def learning(self, trainX=None, trainY=None, loop=None, total_epoch = 1, check_step=0):
@@ -100,7 +100,7 @@ class RNNLibrary:
         # print("last error value : "+self.errors[-1])
         print('\nDone!\n')
 
-    def prediction(self, testX, testY, predict_save_filename):
+    def prediction(self, testX, testY, predict_save_filename=None):
         test_predict = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
         rmse = tf.sqrt(tf.reduce_mean(tf.square(testY - test_predict)))  # 차의 제곱의 평균의 sqrt
         self.rmse_val = self.sess.run(rmse)
@@ -112,6 +112,6 @@ class RNNLibrary:
         plot.plot(test_predict, linestyle='--')
         plot.xlabel("Test Size (blue is TestY, orange is Predict")
         plot.ylabel("Invertor Output")
-        plot.savefig(predict_save_filename)
-        # plot.show()
+        # plot.savefig(predict_save_filename)
+        plot.show()
         plot.close()

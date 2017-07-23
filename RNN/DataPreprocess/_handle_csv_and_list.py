@@ -1,6 +1,5 @@
 import csv
 
-
 def _csv_to_list(_file_name):
     '''
     csv파일을 읽어서 리스트로 만든다
@@ -56,12 +55,21 @@ def _make_list_to_csv(_wanna_object, _file_name):
             writer.writerow(_wanna_object[i])
 
 
-_file_one = 'merged1.csv'
-_file_two = 'merged2.csv'
+def _read_file_combine_one_file(_file_one, _file_two, _file_name):
+    # _file_one = 'merged1.csv'
+    # _file_two = 'merged2.csv'
+    _one = _csv_to_list(_file_name=_file_one)
+    _two = _csv_to_list(_file_name=_file_two)
+    _combine = _combine_two_list(_one_list=_one, _two_list=_two)
+    # _make_list_to_csv(_wanna_object=_combine, _file_name='merged.csv')
+    _make_list_to_csv(_wanna_object=_combine, _file_name=_file_name)
 
-_one = _csv_to_list(_file_name=_file_one)
-_two = _csv_to_list(_file_name=_file_two)
 
-_combine = _combine_two_list(_one_list=_one, _two_list=_two)
 
-_make_list_to_csv(_wanna_object=_combine, _file_name='merged.csv')
+
+# remainder = 39 * 24
+# print(remainder)
+#
+# _file_one = 'merged1.csv'
+# _file_two = 'merged2.csv'
+# _read_file_combine_one_file()
