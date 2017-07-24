@@ -51,7 +51,7 @@ def _exe():
 
 
 def _convert_weather_multiple_24():
-    _file_2013 = '/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014weather_result.csv'
+    _file_2013 = '/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/데이터/2014.csv'
     weather2013 = _csv_to_list(_file_2013)
     _convert_weather_2013 = []
 
@@ -59,7 +59,7 @@ def _convert_weather_multiple_24():
         for _a_day in range(24):
             _convert_weather_2013.append(weather2013[i])
 
-    _make_list_to_csv(_wanna_object=_convert_weather_2013, _file_name='2014convertweather_result.csv')
+    _make_list_to_csv(_wanna_object=_convert_weather_2013, _file_name='2014convertweather.csv')
 
 
 
@@ -99,9 +99,9 @@ def _eee():
 
 # _eee()
 
-# #
-_read_file_combine_one_file(_file_one='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014weather.csv',
-                            _file_two='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014_korean.csv',
+
+_read_file_combine_one_file(_file_one='/Users/masinogns/PycharmProjects/ML/RNN/MyLib/the_data_part_2.csv',
+                            _file_two='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014convertweather.csv',
                             _file_name='2014combine.csv')
 
 
