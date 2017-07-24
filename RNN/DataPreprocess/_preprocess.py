@@ -89,8 +89,8 @@ def _eee():
 
 # 2013년도 날씨 데이터 변환 시 나와야 하는 밸류 갯수 값
 # 8136/24 = 339 , 24하면 363이 나오긴 하네
-# 31+28+30+30+31+30+31+31+30+31+29+31 = 363이 나와야데는데
-
+#  31+28+30+30+31+30+31+31+30+31+29+31 = 363이 나와야데는데
+# 2013, 14 --> 31 28 31 30 31 30 31 31 30 31 30 31 = 365
 
 # _exe()
 # 145는 어떻게 나온거 7월 1일부터 11월 22일까지 x + 145 + 39, 181
@@ -100,6 +100,8 @@ def _eee():
 # _eee()
 
 # #
-_read_file_combine_one_file(_file_one='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/_exprience_data_July.csv',
-                            _file_two='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014convertweather_result.csv',
-                            _file_name='_result_exprience_data_July_with_weather.csv')
+_read_file_combine_one_file(_file_one='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014weather.csv',
+                            _file_two='/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/2014_korean.csv',
+                            _file_name='2014combine.csv')
+
+

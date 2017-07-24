@@ -50,9 +50,6 @@ def printResultOfWeather(cells):
 
      2017/7/20 : 이제 원핫인코딩으로 바꿔
     '''
-    # 2013년도 날씨 데이터 변환 시 나와야 하는 밸류 갯수 값
-    # 8136/24 = 339 + 24하면 딱 363이 나오긴 하네
-    # 31+28+30+30+31+30+31+31+30+31+29+31 = 363이 나와야데는데
 
     _month_2013 = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31']
 
@@ -62,10 +59,10 @@ def printResultOfWeather(cells):
         for i in range(1, int(_month_2013[a-1])+1):  # 1일부터 31일까지 반복문을 실행한다
             compareString = cells[i][a].get_text()
             if ord(compareString[0]) != 160:
-                # print(str(i) + "일 :" + cells[i][a].get_text())
+                print(str(a) +"월 "+ str(i) + "일 :" + cells[i][a].get_text())
                 result.append(cells[i][a].get_text())
             else:
-                # print(str(i) + "일 :맑음")
+                print(str(a) +"월 "+ str(i) + "일 :맑음")
                 result.append("맑음")
     return result
 

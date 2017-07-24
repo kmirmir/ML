@@ -22,12 +22,12 @@ class RNN(RNNLibrary):
 # 출력은 인버터 출력으로 함
 
 hidden_dim = 10
-layer = 3
+layer = 1
 learning_rate = 0.01
-epoch = 5
+epoch = 1
 
 if __name__ == '__main__':
-    correct_file = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/the_data.csv'
+    correct_file = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/the_data_combined.csv'
     path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/'
     load_file_name = '/dataToFourHour.csv'
     save_error_file_name = 'error' + 'lr' + str(learning_rate) + 'layer' + str(
