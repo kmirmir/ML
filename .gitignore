@@ -98,7 +98,7 @@ RNN/data.xlsx
 /RNN/data2.csv
 RNN/data2.csv
 /RNN/output4.csv
-/RNN/finishData.csv
+/RNN/DataPreprocess/finishData.csv
 /RNN/exampleSplit.csv
 /RNN/dataToDay.csv
 /RNN/dataWeather.csv
