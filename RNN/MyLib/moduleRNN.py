@@ -49,8 +49,8 @@ if __name__ == '__main__':
     train_file = load_path + organize_plus_weather_train
     test_file = load_path + organize_plus_weather_test
 
-    # train_file = organize_train
-    # test_file = organize_test
+    # train_file = load_path + organize_train
+    # test_file = load_path + organize_test
 
     # train_file = load_path + original_train
     # test_file = load_path + original_test
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     db.load_test_data(test_file, seq_length=24)
 
     rnn = RNN()
-    rnn.learning(db.trainX, db.trainY, loop=loop, total_epoch=epoch, check_step=100)
+    rnn.learning(db.trainX, db.trainY, db.validationX, db.validationY, loop=loop, total_epoch=epoch, check_step=100)
     rnn.showErrors(error_save_filename=path + save_error_file_name)
     rnn.validation(db.validationX, db.validationY)
     rnn.prediction(db.testX, db.testY, predict_save_filename=path + save_predict_file_name)
@@ -70,5 +70,5 @@ if __name__ == '__main__':
     f = open(path+save_csv_file_name, 'a', encoding='utf-8', newline='')
     wr = csv.writer(f)
     # Learning rate, the number of layer, hidden_dimension, loss
-    wr.writerow([epoch, layer, learning_rate, rnn.errors[-1], rnn.rmse_val, hidden_dim])
+    wr.writerow([epoch, layer, learning_rate, rnn.train_errors[-1], rnn.rmse_val, hidden_dim])
     f.close()

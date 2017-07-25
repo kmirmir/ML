@@ -22,7 +22,8 @@ class RNNLibrary:
     Y = None
 
     rmsm_val = 0
-    errors = []
+    train_errors = []
+    validation_errors = []
     epoch_cost = []
 
     @abstractmethod
@@ -76,14 +77,18 @@ class RNNLibrary:
         x_label = ''
         y_label = ''
 
-        plot.plot(self.errors)
+        plot.plot(self.train_errors, label='train loss')
+        plot.plot(self.validation_errors, label='validation loss')
+
         plot.xlabel(x_label)
         plot.ylabel(y_label)
+
         plot.savefig(error_save_filename)
+        plot.legend(loc='upper left')
         plot.show()
         plot.close()
 
-    def learning(self, trainX=None, trainY=None, loop=None, total_epoch = 1, check_step=100):
+    def learning(self, trainX=None, trainY=None, validationX=None, validationY=None, loop=None, total_epoch = 1, check_step=100):
 
         self.init_rnn_library()
 
@@ -96,14 +101,17 @@ class RNNLibrary:
 
             for i in range(loop):
                 self.sess.run(self.train, feed_dict={self.X: trainX, self.Y: trainY})
-                loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
-                self.errors.append(loss)
+                train_loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
+                validation_loss = self.sess.run(self.cost, feed_dict={self.X: validationX, self.Y: validationY})
+
+                self.train_errors.append(train_loss)
+                self.validation_errors.append(validation_loss)
                 self.epoch_cost.append(total_cost)
 
                 if i % check_step == 0:
                     # sys.stdout.write('.')
                     # sys.stdout.flush()
-                    print("step loss: {}".format(loss))
+                    print("step loss: {}".format(train_loss))
 
         print('\nDone!\n')
 
