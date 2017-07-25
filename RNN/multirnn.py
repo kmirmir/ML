@@ -57,7 +57,7 @@ def writeCsv(filename):
 '''
     something = 24 --> 하루로 묶은 것
 '''
-result = getResultOfDataToSometing(12)
+result = getResultOfDataToSometing(24)
 
 
 for i in range(len(result)):

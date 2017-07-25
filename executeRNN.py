@@ -41,11 +41,9 @@ if __name__ == '__main__':
     #     layer) + 'lr' + str(learning_rate) + 'hidden' + str(hidden_dim) + '.png'
     #
     save_error_file_name = '/error/' + 'epoch' + str(epoch) + '/layer' + str(layer) + '/error' + 'lr' + str(
-        learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
+        learning_rate) + 'layer' + str(layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
     save_predict_file_name = '/predict/' + 'epoch' + str(epoch) + '/layer' + str(layer) + '/predict' + 'lr' + str(
-        learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
+        learning_rate) + 'layer' + str(layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
 
     save_csv_file_name = '/output/' + 'epoch' + str(epoch) + '.csv'
 

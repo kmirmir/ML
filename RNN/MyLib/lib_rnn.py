@@ -41,13 +41,24 @@ class RNNLibrary:
     def setHypothesis(self, hidden_dim, layer=1):
         def lstm_cell():
             cell = tf.contrib.rnn.BasicLSTMCell(
-                num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh, reuse=tf.get_variable_scope().reuse
+                num_units=hidden_dim, state_is_tuple=True, activation=tf.tanh, forget_bias=1.0, reuse=tf.get_variable_scope().reuse
             )
-
             return cell
 
-        multi_cell = tf.nn.rnn_cell.MultiRNNCell([lstm_cell() for _ in range(layer)], state_is_tuple=True)
-        outputs, _states = tf.nn.dynamic_rnn(multi_cell, self.X, dtype=tf.float32)
+        def layer_nomrm_lstm_cell():
+            cell = tf.contrib.rnn.LayerNormBasicLSTMCell(
+                num_units=hidden_dim, activation=tf.tanh, reuse=tf.get_variable_scope().reuse, dropout_keep_prob=1.0,
+            )
+            return cell
+
+        multi_lstm_cell = tf.nn.rnn_cell.MultiRNNCell([lstm_cell() for _ in range(layer)], state_is_tuple=True)
+        # multi_norm_cell = tf.nn.rnn_cell.MultiRNNCell([layer_nomrm_lstm_cell() for _ in range(layer)])
+
+        # norm_cell = tf.nn.rnn_cell.MultiRNNCell([layer_nomrm_lstm_cell() for _ in range(layer)], state_is_tuple=True)
+        # residual_norm_cell = tf.nn.rnn_cell.ResidualWrapper([layer_nomrm_lstm_cell() for _ in range(layer)], state_is_tuple=True)
+
+        outputs, _states = tf.nn.dynamic_rnn(multi_lstm_cell, self.X, dtype=tf.float32)
+        # outputs, _states = tf.nn.dynamic_rnn(multi_norm_cell, self.X, dtype=tf.float32)
 
         self.hypothesis = tf.contrib.layers.fully_connected(outputs[:, -1], self.output_dim, activation_fn=None)
 
@@ -86,26 +97,27 @@ class RNNLibrary:
             for i in range(loop):
                 self.sess.run(self.train, feed_dict={self.X: trainX, self.Y: trainY})
                 loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
-                # _, step_loss = self.sess.run([self.train, self.cost], feed_dict={self.X: trainX, self.Y: trainY})
-                # print("[step: {}] loss: {}".format(i, step_loss))
                 self.errors.append(loss)
-                # print("[loss : {}]".format(loss))
-                # total_cost += step_loss
                 self.epoch_cost.append(total_cost)
 
                 if i % check_step == 0:
                     sys.stdout.write('.')
                     sys.stdout.flush()
 
-        # print("last error value : "+self.errors[-1])
         print('\nDone!\n')
 
     def prediction(self, testX, testY, predict_save_filename=None):
         test_predict = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
+        # pre_loss = self.sess.run(self.cost, feed_dict={self.X: testY, self.Y: test_predict})
+        # print(pre_loss)
+
         rmse = tf.sqrt(tf.reduce_mean(tf.square(testY - test_predict)))  # 차의 제곱의 평균의 sqrt
+        rmse2 = tf.reduce_mean(tf.square(testY - test_predict))  # sum of the squares
+        #rmse3 = tf.reduce_sum(tf.square(testY - test_predict))  # sum of the squares
+
         self.rmse_val = self.sess.run(rmse)
-        print("RMSE: {:.2%}".format(self.rmse_val))
-        print("RMSE: {}".format(self.rmse_val))
+        # print("RMSE: {:.2%}".format(self.rmse_val))
+        print("loss: {}".format(self.rmse_val))
 
         fig = plot.figure()
         plot.plot(testY, linestyle='-')

@@ -1,8 +1,6 @@
 from RNN.MyLib.lib_rnn import RNNLibrary
 from RNN.MyLib.lib_dataset import Database
 
-
-
 class DB(Database):
     def init_dataset(self):
         self.nomalization()
@@ -27,7 +25,11 @@ learning_rate = 0.01
 epoch = 1
 
 if __name__ == '__main__':
-    correct_file = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/the_data_combined.csv'
+    organize_csv_weather = '/Users/masinogns/PycharmProjects/ML/RNN/DataPreprocess/combine.csv'
+    the_data_organize = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/the_data_combined.csv'
+    original = '/Users/masinogns/PycharmProjects/ML/RNN/finishData.csv'
+
+    correct_file = original
     path = '/Users/masinogns/PycharmProjects/ML/RNN/MyLib/'
     load_file_name = '/dataToFourHour.csv'
     save_error_file_name = 'error' + 'lr' + str(learning_rate) + 'layer' + str(
@@ -41,7 +43,7 @@ if __name__ == '__main__':
     db.load(correct_file, seq_length=24)
 
     rnn = RNN()
-    rnn.learning(db.trainX, db.trainY, loop=1000, total_epoch=epoch, check_step=100)
+    rnn.learning(db.trainX, db.trainY, loop=100, total_epoch=epoch, check_step=100)
     rnn.showErrors(error_save_filename=path + save_error_file_name)
     rnn.prediction(db.testX, db.testY, predict_save_filename=path + save_predict_file_name)
 
