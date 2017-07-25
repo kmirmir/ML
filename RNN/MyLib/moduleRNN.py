@@ -7,7 +7,7 @@ class DB(Database):
 
 class RNN(RNNLibrary):
     def init_rnn_library(self):
-        self.setParams(seq_length=24, input_dim=15, output_dim=1)
+        self.setParams(seq_length=24, input_dim=9, output_dim=1)
         self.setPlaceholder(seq_length=rnn.seq_length, input_dim=rnn.input_dim)
         self.setHypothesis(hidden_dim=hidden_dim, layer=layer)
         self.setCostfunction()
@@ -30,10 +30,19 @@ if __name__ == '__main__':
 
     path = '/Users/masinogns/PycharmProjects/ML/RNN/'
     load_file_name = '/dataToFourHour.csv'
-    save_error_file_name = 'error/' + 'loop' + str(loop) + 'lr' + str(learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
-    save_predict_file_name = 'predict/' + 'loop' + str(loop) + 'lr' + str(learning_rate) + 'layer' + str(
-        layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) + '.png'
+
+    '''
+    만약 name 을 쓴다면 weather가 들어있는 organize_plus_weather를 써야한다
+    name2 를 쓴다면 weather가 들어있지 않은 organize를 써야한다
+    '''
+
+    name = 'weatherYes'
+    name2 = 'weatherNo'
+
+    save_error_file_name = 'error/' + name \
+                           +'loop' + str(loop) + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
+    save_predict_file_name = 'predict/' + name \
+                             +'loop' + str(loop) + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) + '.png'
     save_csv_file_name = 'output/'+ 'error' +'epoch' + str(epoch) + '.csv'
 
     load_path = '/Users/masinogns/PycharmProjects/ML/RNN/Data/'
@@ -46,14 +55,11 @@ if __name__ == '__main__':
     organize_plus_weather_train = 'organize_plus_weather_train.csv'
     organize_plus_weather_test = 'organize_plus_weather_test.csv'
 
-    train_file = load_path + organize_plus_weather_train
-    test_file = load_path + organize_plus_weather_test
+    # train_file = load_path + organize_plus_weather_train
+    # test_file = load_path + organize_plus_weather_test
 
-    # train_file = load_path + organize_train
-    # test_file = load_path + organize_test
-
-    # train_file = load_path + original_train
-    # test_file = load_path + original_test
+    train_file = load_path + organize_train
+    test_file = load_path + organize_test
 
     db = DB()
     # db.load(correct_file, seq_length=24)

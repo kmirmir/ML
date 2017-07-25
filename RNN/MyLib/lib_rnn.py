@@ -78,7 +78,7 @@ class RNNLibrary:
         y_label = ''
 
         plot.plot(self.train_errors, label='train loss')
-        plot.plot(self.validation_errors, label='validation loss')
+        # plot.plot(self.validation_errors, label='validation loss')
 
         plot.xlabel(x_label)
         plot.ylabel(y_label)
@@ -102,10 +102,10 @@ class RNNLibrary:
             for i in range(loop):
                 self.sess.run(self.train, feed_dict={self.X: trainX, self.Y: trainY})
                 train_loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
-                validation_loss = self.sess.run(self.cost, feed_dict={self.X: validationX, self.Y: validationY})
+                # validation_loss = self.sess.run(self.cost, feed_dict={self.X: validationX, self.Y: validationY})
 
                 self.train_errors.append(train_loss)
-                self.validation_errors.append(validation_loss)
+                # self.validation_errors.append(validation_loss)
                 self.epoch_cost.append(total_cost)
 
                 if i % check_step == 0:
@@ -115,10 +115,21 @@ class RNNLibrary:
 
         print('\nDone!\n')
 
-    def validation(self, validationX, validationY, validation_save_filename=None):
+    def validation(self, validationX, validationY, loop=100, total_epoch = 1, validation_save_filename=None):
         test_validation = self.sess.run(self.hypothesis, feed_dict={self.X: validationX})
         # pre_loss = self.sess.run(self.cost, feed_dict={self.X: testY, self.Y: test_predict})
         # print(pre_loss)
+        for epoch in range(total_epoch):
+            total_cost = 0
+
+            for i in range(loop):
+                self.sess.run(self.train, feed_dict={self.X: validationX, self.Y: validationY})
+                # train_loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
+                validation_loss = self.sess.run(self.cost, feed_dict={self.X: validationX, self.Y: validationY})
+
+                # self.train_errors.append(train_loss)
+                self.validation_errors.append(validation_loss)
+                self.epoch_cost.append(total_cost)
 
         rmse = tf.sqrt(tf.reduce_mean(tf.square(validationY - test_validation)))  # 차의 제곱의 평균의 sqrt
         rmse2 = tf.reduce_mean(tf.square(validationY - test_validation))  # sum of the squares
@@ -131,8 +142,9 @@ class RNNLibrary:
         print("validation sse: {}".format(self.sess.run(rmse3)))
 
         fig = plot.figure()
-        plot.plot(validationY, linestyle='-')
-        plot.plot(test_validation, linestyle='--')
+        # plot.plot(validationY, linestyle='-')
+        # plot.plot(test_validation, linestyle='--')
+        plot.plot(self.rmse_val, linestyle='--', label='validation')
         plot.xlabel("Test Size (blue is TestY, orange is Predict")
         plot.ylabel("Invertor Output")
         # plot.savefig(validation_save_filename)
