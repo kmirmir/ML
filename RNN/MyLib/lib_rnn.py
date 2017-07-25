@@ -79,11 +79,11 @@ class RNNLibrary:
         plot.plot(self.errors)
         plot.xlabel(x_label)
         plot.ylabel(y_label)
-        # plot.savefig(error_save_filename)
+        plot.savefig(error_save_filename)
         plot.show()
         plot.close()
 
-    def learning(self, trainX=None, trainY=None, loop=None, total_epoch = 1, check_step=0):
+    def learning(self, trainX=None, trainY=None, loop=None, total_epoch = 1, check_step=100):
 
         self.init_rnn_library()
 
@@ -101,10 +101,36 @@ class RNNLibrary:
                 self.epoch_cost.append(total_cost)
 
                 if i % check_step == 0:
-                    sys.stdout.write('.')
-                    sys.stdout.flush()
+                    # sys.stdout.write('.')
+                    # sys.stdout.flush()
+                    print("step loss: {}".format(loss))
 
         print('\nDone!\n')
+
+    def validation(self, validationX, validationY, validation_save_filename=None):
+        test_validation = self.sess.run(self.hypothesis, feed_dict={self.X: validationX})
+        # pre_loss = self.sess.run(self.cost, feed_dict={self.X: testY, self.Y: test_predict})
+        # print(pre_loss)
+
+        rmse = tf.sqrt(tf.reduce_mean(tf.square(validationY - test_validation)))  # 차의 제곱의 평균의 sqrt
+        rmse2 = tf.reduce_mean(tf.square(validationY - test_validation))  # sum of the squares
+        rmse3 = tf.reduce_sum(tf.square(validationY - test_validation))  # sum of the squares
+
+        self.rmse_val = self.sess.run(rmse)
+
+        print("validation rmse: {}".format(self.rmse_val))
+        print("validation mse: {}".format(self.sess.run(rmse2)))
+        print("validation sse: {}".format(self.sess.run(rmse3)))
+
+        fig = plot.figure()
+        plot.plot(validationY, linestyle='-')
+        plot.plot(test_validation, linestyle='--')
+        plot.xlabel("Test Size (blue is TestY, orange is Predict")
+        plot.ylabel("Invertor Output")
+        # plot.savefig(validation_save_filename)
+        plot.show()
+        plot.close()
+
 
     def prediction(self, testX, testY, predict_save_filename=None):
         test_predict = self.sess.run(self.hypothesis, feed_dict={self.X: testX})
@@ -113,17 +139,19 @@ class RNNLibrary:
 
         rmse = tf.sqrt(tf.reduce_mean(tf.square(testY - test_predict)))  # 차의 제곱의 평균의 sqrt
         rmse2 = tf.reduce_mean(tf.square(testY - test_predict))  # sum of the squares
-        #rmse3 = tf.reduce_sum(tf.square(testY - test_predict))  # sum of the squares
+        rmse3 = tf.reduce_sum(tf.square(testY - test_predict))  # sum of the squares
 
         self.rmse_val = self.sess.run(rmse)
-        # print("RMSE: {:.2%}".format(self.rmse_val))
-        print("loss: {}".format(self.rmse_val))
+
+        print("test rmse: {}".format(self.rmse_val))
+        print("test mse: {}".format(self.sess.run(rmse2)))
+        print("test sse: {}".format(self.sess.run(rmse3)))
 
         fig = plot.figure()
         plot.plot(testY, linestyle='-')
         plot.plot(test_predict, linestyle='--')
         plot.xlabel("Test Size (blue is TestY, orange is Predict")
         plot.ylabel("Invertor Output")
-        # plot.savefig(predict_save_filename)
+        plot.savefig(predict_save_filename)
         plot.show()
         plot.close()

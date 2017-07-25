@@ -2,44 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4812b1d9-f894-487a-8d2d-64bba1a5b0cb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2013_korean.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2013combine.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2013convertweather.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2013weather.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2014_korean.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2014combine.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2014combine_to_remove_feature.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2014convertweather.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/2014weather.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/_correct_data.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/exe.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/데이터/2013_2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/데이터/2014_2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/2013data.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/2014data.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/dataToDay.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/output.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/the_data_part_1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/the_data_part_2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/ToyLSTM.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/board/sample/events.out.tfevents.1499758734.hoonB.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/board/sample/events.out.tfevents.1499758973.hoonB.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/board/sample/events.out.tfevents.1499826041.hoonB.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/board/sample/events.out.tfevents.1499827940.hoonB.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/board/sample/events.out.tfevents.1499827963.hoonB.local" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/changeRowToWantData.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/dataToImage.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/the_data_combined_day.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/the_data_origin_day.csv" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/combine_test.csv" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_test.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/combine_train.csv" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_train.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/MyLib/the_data.csv" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/original_train.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/MyLib/the_data_combined.csv" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/organize_train.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/exePanda.py" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/_exe_panda.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/multirnn.py" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/_combine_time.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/01 - MNIST.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/ea.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/example.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/exe_mylib_cnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/mnist/data/t10k-images-idx3-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/mnist/data/t10k-labels-idx1-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/mnist/data/train-images-idx3-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/mnist/data/train-labels-idx1-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CNN/mylib_cnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/.idea/ML_kihoon.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/cifar10_parse.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/.idea/finish.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/ex_loadfile.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/library_classification.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/library_regression.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/tensorshape.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/training_logistic.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/training_multi_variable.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/finish/training_one_variable.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/example_1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000005.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000007.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000008.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000009.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/000010.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/imageCrawler/image_dir_1/example_2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_1_basic/01_basic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_1_basic/02_linear.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_2_neuralnetwork/01_classification.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_2_neuralnetwork/02_Deep NN.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_2_neuralnetwork/03_tensorboard.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_2_neuralnetwork/data.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_2_neuralnetwork/events.out.tfevents.1483026766.mpr" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_3_cnn/01_minist.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_3_cnn/mnist/data/t10k-images-idx3-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_3_cnn/mnist/data/t10k-labels-idx1-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_3_cnn/mnist/data/train-images-idx3-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/golbin_3_cnn/mnist/data/train-labels-idx1-ubyte.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/lab1/helloworld.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/lab1/placeHolder.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/lab3/hand_made_descent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/lab3/linearRegression.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/lab3/show_cost.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/lecture/lab4/01_multi_variable_linear_regression.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/.idea/module.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/ML_kihoon.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/ML_kihoon2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/ML_logistic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/ML_multi_linear.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/cost_example_1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/ex_multi_variable.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/example_1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/first_ex_1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/graph_1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/init.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/kjy_logistic.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/logistic.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/logistic2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/numpy_example.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/professior_source.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ML_kihoon/module/train.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MyLib/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MyLib/edge/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/board/sample/events.out.tfevents.1499826182.hoonB.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/board/sample/events.out.tfevents.1499826568.hoonB.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/board/sample/events.out.tfevents.1499826857.hoonB.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/board/sample/events.out.tfevents.1499827164.hoonB.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/board/sample/events.out.tfevents.1499827350.hoonB.local" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/데이터.numbers" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_test.csv" afterPath="$PROJECT_DIR$/RNN/Data/organize_plus_weather_test.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_train.csv" afterPath="$PROJECT_DIR$/RNN/Data/organize_plus_weather_train.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/organize_test.csv" afterPath="$PROJECT_DIR$/RNN/Data/organize_test.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/organize_train.csv" afterPath="$PROJECT_DIR$/RNN/Data/organize_train.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/original_test.csv" afterPath="$PROJECT_DIR$/RNN/Data/original_test.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/original_train.csv" afterPath="$PROJECT_DIR$/RNN/Data/original_train.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/executeRNN.py" afterPath="$PROJECT_DIR$/executeRNNinUbuntuWithShell.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/shell.sh" afterPath="$PROJECT_DIR$/needWhereUseInUbuntuShell.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py" afterPath="$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" afterPath="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" afterPath="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" afterPath="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/output/epoch1.csv" afterPath="$PROJECT_DIR$/RNN/MyLib/output/epoch1.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,110 +115,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="organize_train.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_train.csv">
+      <file leaf-file-name="moduleRNN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="10637" column="9" lean-forward="false" selection-start-line="10637" selection-start-column="9" selection-end-line="10637" selection-end-column="9" />
+            <state relative-caret-position="334">
+              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="epoch1.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/output/epoch1.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_exe_panda.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_exe_panda.py">
+      <file leaf-file-name="lib_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_combine_time.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_combine_time.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_preprocess.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_preprocess.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#96#0" expanded="true" />
-                <marker date="1500881234000" expanded="true" signature="2758:3000" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_one_hot_encoding.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="original_train.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/original_train.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="19166" column="39" lean-forward="false" selection-start-line="19166" selection-start-column="39" selection-end-line="19166" selection-end-column="39" />
+            <state relative-caret-position="859">
+              <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="original_test.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/original_test.csv">
+      <file leaf-file-name="lib_rnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_rnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="1487" column="40" lean-forward="false" selection-start-line="1487" selection-start-column="40" selection-end-line="1487" selection-end-column="40" />
+            <state relative-caret-position="1024">
+              <caret line="147" column="20" lean-forward="false" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organize_test.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_test.csv">
+      <file leaf-file-name="multi.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyLib/multi.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="1487" column="40" lean-forward="false" selection-start-line="1487" selection-start-column="40" selection-end-line="1487" selection-end-column="40" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mylib_softmax_classification.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyLib/mylib_softmax_classification.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="92" column="8" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="organize_plus_weather_train.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_train.csv">
+        <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_train.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
+            <state relative-caret-position="113247">
               <caret line="10655" column="63" lean-forward="false" selection-start-line="10655" selection-start-column="63" selection-end-line="10655" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organize_plus_weather_test.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_test.csv">
+      <file leaf-file-name="1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyLib/model_softmax/1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="1487" column="29" lean-forward="false" selection-start-line="1487" selection-start-column="29" selection-end-line="1487" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyLib/model_softmax/2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="introduce.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyLib/introduce.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -197,11 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/RNN/month.csv" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/_get_month.py" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/finishData.csv" />
-        <option value="$PROJECT_DIR$/RNN/exePanda.py" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/_correct_data.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/_correct_data_2.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/_handle_csv_and_list.py" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/2014convertweather_result.csv" />
@@ -234,12 +280,9 @@
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/_find_incorrect.py" />
         <option value="$PROJECT_DIR$/RNN/the_data_origin_day.csv" />
         <option value="$PROJECT_DIR$/RNN/multirnn.py" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" />
         <option value="$PROJECT_DIR$/RNN/MyLib/the_data.csv" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" />
         <option value="$PROJECT_DIR$/RNN/MyLib/output/epoch1.csv" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/combine.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/combine_test.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/the_data_combined.csv" />
@@ -248,12 +291,20 @@
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/original_train.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/original_test.csv" />
+        <option value="$PROJECT_DIR$/RNN/example/e.py" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/result.csv" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/result.txt" />
+        <option value="$PROJECT_DIR$/RNN/output/epoch1.csv" />
+        <option value="$PROJECT_DIR$/MyLib/introduce.txt" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -299,6 +350,46 @@
               <option name="myItemId" value="RNN" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="predict" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="error" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -336,6 +427,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -349,11 +486,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/RNN/Data" />
       <recent name="$PROJECT_DIR$/RNN/DataPreprocess" />
       <recent name="$PROJECT_DIR$/RNN/MyLib" />
       <recent name="$PROJECT_DIR$/RNN/MyLib/error/epoch1" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/RNN" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/RNN/MyLib" />
@@ -377,23 +514,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tensorflow" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/DataPreprocess/_preprocess.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="exe" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RNN/DataPreprocess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tensorflow" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/DataPreprocess/exe.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -445,6 +565,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tensorflow" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/DataPreprocess/_combine_time.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="e" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RNN/example" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tensorflow" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/example/e.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -596,18 +733,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python._preprocess" />
-      <item index="1" class="java.lang.String" itemvalue="Python.exe" />
-      <item index="2" class="java.lang.String" itemvalue="Python._find_incorrect" />
-      <item index="3" class="java.lang.String" itemvalue="Python.moduleRNN" />
-      <item index="4" class="java.lang.String" itemvalue="Python.multirnn" />
+      <item index="1" class="java.lang.String" itemvalue="Python._find_incorrect" />
+      <item index="2" class="java.lang.String" itemvalue="Python.moduleRNN" />
+      <item index="3" class="java.lang.String" itemvalue="Python.multirnn" />
+      <item index="4" class="java.lang.String" itemvalue="Python.e" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.moduleRNN" />
-        <item index="1" class="java.lang.String" itemvalue="Python._find_incorrect" />
-        <item index="2" class="java.lang.String" itemvalue="Python.multirnn" />
-        <item index="3" class="java.lang.String" itemvalue="Python._preprocess" />
-        <item index="4" class="java.lang.String" itemvalue="Python.exe" />
+        <item index="1" class="java.lang.String" itemvalue="Python.e" />
+        <item index="2" class="java.lang.String" itemvalue="Python._find_incorrect" />
+        <item index="3" class="java.lang.String" itemvalue="Python.multirnn" />
+        <item index="4" class="java.lang.String" itemvalue="Python._preprocess" />
       </list>
     </recent_temporary>
   </component>
@@ -634,15 +771,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32109374" sideWeight="0.47680414" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30087847" sideWeight="0.47680414" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37583002" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23771581" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2482663" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21171875" sideWeight="0.52319586" order="2" side_tool="true" content_ui="tabs" />
@@ -688,117 +825,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/noeq.py" />
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/데이터/2014.csv" />
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/2014combine_newly_try.csv" />
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/output.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/2014combine_to_remove_feature.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/2014convertweather.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="7559" column="23" lean-forward="false" selection-start-line="7559" selection-start-column="23" selection-end-line="7559" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/데이터/2013-표 1.csv" />
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/데이터/2013_2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="190" column="23" lean-forward="false" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/2013convertweather.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="4583" column="23" lean-forward="false" selection-start-line="4583" selection-start-column="23" selection-end-line="4583" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/2013combine.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4584" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/2014combine.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7560" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shell.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executeRNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="69" column="23" lean-forward="true" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/2014data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="7687" column="18" lean-forward="false" selection-start-line="7687" selection-start-column="18" selection-end-line="7687" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/데이터/2014_2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="314" column="23" lean-forward="false" selection-start-line="314" selection-start-column="23" selection-end-line="314" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/output/epoch3.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/the_data_part_2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/the_data_part_1.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="4583" column="35" lean-forward="true" selection-start-line="4583" selection-start-column="35" selection-end-line="4583" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_get_month.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -855,14 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/the_data_combined_day.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -875,22 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_rnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -931,14 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57774">
           <caret line="8531" column="25" lean-forward="true" selection-start-line="8531" selection-start-column="25" selection-end-line="8531" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_train.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="10655" column="63" lean-forward="false" selection-start-line="10655" selection-start-column="63" selection-end-line="10655" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -996,7 +990,7 @@
         <state relative-caret-position="525">
           <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#0#17#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1006,7 +1000,7 @@
         <state relative-caret-position="450">
           <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1027,12 +1021,12 @@
         <state relative-caret-position="405">
           <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/original_train.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/Data/original_train.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="635">
           <caret line="19166" column="39" lean-forward="false" selection-start-line="19166" selection-start-column="39" selection-end-line="19166" selection-end-column="39" />
@@ -1040,7 +1034,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/original_test.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/Data/original_test.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
           <caret line="1487" column="40" lean-forward="false" selection-start-line="1487" selection-start-column="40" selection-end-line="1487" selection-end-column="40" />
@@ -1048,7 +1042,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_train.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_train.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="10637" column="9" lean-forward="false" selection-start-line="10637" selection-start-column="9" selection-end-line="10637" selection-end-column="9" />
@@ -1056,7 +1050,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_test.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_test.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
           <caret line="1487" column="40" lean-forward="false" selection-start-line="1487" selection-start-column="40" selection-end-line="1487" selection-end-column="40" />
@@ -1064,11 +1058,187 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/organize_plus_weather_test.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_test.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="1487" column="29" lean-forward="false" selection-start-line="1487" selection-start-column="29" selection-end-line="1487" selection-end-column="29" />
+        <state relative-caret-position="320">
+          <caret line="1466" column="43" lean-forward="false" selection-start-line="1466" selection-start-column="43" selection-end-line="1466" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/example/e.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/lr0.01layer1hidden10epoch1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/lr0.01layer1hidden10epoch1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/mylib_logistic_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/train.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/Multi/01_multi-variable_linear_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/edge/3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/edge/2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/edge/4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/edge/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/multi.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/mylib_softmax_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="92" column="8" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/model_softmax/1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/model_softmax/2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyLib/introduce.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113247">
+          <caret line="10655" column="63" lean-forward="false" selection-start-line="10655" selection-start-column="63" selection-end-line="10655" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="859">
+          <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/output/epoch1.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1024">
+          <caret line="147" column="20" lean-forward="false" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
