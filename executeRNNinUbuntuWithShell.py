@@ -60,7 +60,7 @@ if __name__ == '__main__':
     f = open(path+save_csv_file_name, 'a', encoding='utf-8', newline='')
     wr = csv.writer(f)
     # Learning rate, the number of layer, hidden_dimension, loss
-    wr.writerow([epoch, layer, learning_rate, rnn.errors[-1], rnn.rmse_val, hidden_dim])
+    wr.writerow([epoch, layer, learning_rate, rnn.errors[-1], rnn.test_loss, hidden_dim])
     f.close()
 
     print("Epoch : {}".format(epoch))

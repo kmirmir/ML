@@ -7,7 +7,7 @@ class DB(Database):
 
 class RNN(RNNLibrary):
     def init_rnn_library(self):
-        self.setParams(seq_length=24, input_dim=9, output_dim=1)
+        self.setParams(seq_length=24, input_dim=15, output_dim=1)
         self.setPlaceholder(seq_length=rnn.seq_length, input_dim=rnn.input_dim)
         self.setHypothesis(hidden_dim=hidden_dim, layer=layer)
         self.setCostfunction()
@@ -18,13 +18,11 @@ class RNN(RNNLibrary):
 # VCB = 발전기 출력 차단기 Vaccum Circuit Breacker
 # ACB = 기중 차단기 Air Circuit Breacker
 # 출력은 인버터 출력으로 함
-
+# feed value of shape (655, 24, 15)
 hidden_dim = 10
 layer = 1
 learning_rate = 0.01
-epoch = 1
-loop = 1000
-switch = ''
+epoch = 62
 
 if __name__ == '__main__':
 
@@ -40,26 +38,32 @@ if __name__ == '__main__':
     name2 = 'weatherNo'
 
     save_error_file_name = 'error/' + name \
-                           +'loop' + str(loop) + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'hidden' + str(hidden_dim) + 'epoch' + str(epoch) + '.png'
+                            + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'epoch' + str(epoch) + '.png'
     save_predict_file_name = 'predict/' + name \
-                             +'loop' + str(loop) + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'hidden' + str(hidden_dim)+ 'epoch' + str(epoch) + '.png'
-    save_csv_file_name = 'output/'+ 'error' +'epoch' + str(epoch) + '.csv'
+                             + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'epoch' + str(epoch) + '.png'
+    save_validation_file_name = 'validation/'+ name \
+                             + 'lr' + str(learning_rate) + 'layer' + str(layer) + 'epoch' + str(epoch) + '.png'
+    save_csv_file_name = 'output/'+ name +'epoch' + str(epoch) + '.csv'
 
     load_path = '/Users/masinogns/PycharmProjects/ML/RNN/Data/'
-    original_train = 'original_train.csv'
-    original_test = 'original_test.csv'
 
-    organize_train = 'organize_train.csv'
-    organize_test = 'organize_test.csv'
-
+    '''
+    weather yes
+    '''
     organize_plus_weather_train = 'organize_plus_weather_train.csv'
     organize_plus_weather_test = 'organize_plus_weather_test.csv'
 
-    # train_file = load_path + organize_plus_weather_train
-    # test_file = load_path + organize_plus_weather_test
+    train_file = load_path + organize_plus_weather_train
+    test_file = load_path + organize_plus_weather_test
 
-    train_file = load_path + organize_train
-    test_file = load_path + organize_test
+    '''
+    weather no
+    '''
+    organize_train = 'organize_train.csv'
+    organize_test = 'organize_test.csv'
+
+    # train_file = load_path + organize_train
+    # test_file = load_path + organize_test
 
     db = DB()
     # db.load(correct_file, seq_length=24)
@@ -67,14 +71,17 @@ if __name__ == '__main__':
     db.load_test_data(test_file, seq_length=24)
 
     rnn = RNN()
-    rnn.learning(db.trainX, db.trainY, db.validationX, db.validationY, loop=loop, total_epoch=epoch, check_step=100)
+    rnn.learning(db.trainX, db.trainY, db.validationX, db.validationY, total_epoch=epoch, check_step=100)
     rnn.showErrors(error_save_filename=path + save_error_file_name)
-    rnn.validation(db.validationX, db.validationY)
+    rnn.validation(validation_save_filename = path + save_validation_file_name)
     rnn.prediction(db.testX, db.testY, predict_save_filename=path + save_predict_file_name)
 
+    print("train sse: {}".format(rnn.train_errors[-1]))
+    print("validation sse: {}".format(rnn.validation_errors[-1]))
+    print("test sse: {}".format(rnn.test_loss))
     import csv
     f = open(path+save_csv_file_name, 'a', encoding='utf-8', newline='')
     wr = csv.writer(f)
     # Learning rate, the number of layer, hidden_dimension, loss
-    wr.writerow([epoch, layer, learning_rate, rnn.train_errors[-1], rnn.rmse_val, hidden_dim])
+    wr.writerow([epoch, layer, learning_rate, rnn.train_errors[-1], rnn.validation_errors[-1], rnn.test_loss])
     f.close()

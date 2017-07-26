@@ -2,8 +2,8 @@ import sys
 import tensorflow as tf
 import matplotlib
 from abc import abstractmethod
-
-matplotlib.use('TkAgg')
+matplotlib.use('Agg')
+# matplotlib.use('TkAgg')
 import matplotlib.pyplot as plot
 
 
@@ -12,7 +12,7 @@ class RNNLibrary:
     seq_length = 0
     input_dim = 0
     output_dim = 0
-
+    batch_size = 36
     hypothesis = None
     cost = None
     optimizer = None
@@ -21,7 +21,7 @@ class RNNLibrary:
     X = None
     Y = None
 
-    rmsm_val = 0
+    test_loss = 0
     train_errors = []
     validation_errors = []
     epoch_cost = []
@@ -96,59 +96,67 @@ class RNNLibrary:
         init = tf.global_variables_initializer()
         self.sess.run(init)
 
+        # rmse = tf.sqrt(tf.reduce_mean(tf.square(validationY - test_validation)))  # 차의 제곱의 평균의 sqrt
+
+        len_data = int(len(trainX)/self.batch_size)
+        val_data = int(len(validationX)/len_data)
+
         for epoch in range(total_epoch):
-            total_cost = 0
+            print(str(epoch)+" is doing ...")
+            # 276 = len_data it is 9936 / batch_size (36) = 276
+            for i in range(len_data):
+                self.sess.run(self.train, feed_dict={
+                    self.X: trainX[self.batch_size*i : self.batch_size*(i+1)],
+                    self.Y: trainY[self.batch_size*i : self.batch_size*(i+1)]
+                })
 
-            for i in range(loop):
-                self.sess.run(self.train, feed_dict={self.X: trainX, self.Y: trainY})
-                train_loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
-                # validation_loss = self.sess.run(self.cost, feed_dict={self.X: validationX, self.Y: validationY})
+                train_loss = self.sess.run(self.cost, feed_dict={
+                    self.X: trainX[self.batch_size*i : self.batch_size*(i+1)],
+                    self.Y: trainY[self.batch_size*i : self.batch_size*(i+1)]
+                })
 
-                self.train_errors.append(train_loss)
-                # self.validation_errors.append(validation_loss)
-                self.epoch_cost.append(total_cost)
+                test_validation = self.sess.run(self.hypothesis, feed_dict={
+                    self.X: validationX[val_data*i : val_data*(i+1)]
+                })
 
-                if i % check_step == 0:
-                    # sys.stdout.write('.')
-                    # sys.stdout.flush()
-                    print("step loss: {}".format(train_loss))
+                validation = tf.reduce_sum(tf.square(validationY[val_data*i : val_data*(i+1)] - test_validation))
+                validation_loss = self.sess.run(validation)
+
+            self.train_errors.append(train_loss)
+            self.validation_errors.append(validation_loss)
+            import csv
+            path = '/Users/masinogns/PycharmProjects/ML/RNN/train_and_validation_csv'
+            f = open(path+'/'+'total_epoch_train_and_validation.csv', 'a', encoding='utf-8', newline='')
+            wr = csv.writer(f)
+            # Learning rate, the number of layer, hidden_dimension, loss
+            wr.writerow([total_epoch, train_loss, validation_loss])
+            f.close()
 
         print('\nDone!\n')
 
-    def validation(self, validationX, validationY, loop=100, total_epoch = 1, validation_save_filename=None):
-        test_validation = self.sess.run(self.hypothesis, feed_dict={self.X: validationX})
+    def validation(self, validation_save_filename=None):
+        # test_validation = self.sess.run(self.hypothesis, feed_dict={self.X: validationX})
         # pre_loss = self.sess.run(self.cost, feed_dict={self.X: testY, self.Y: test_predict})
         # print(pre_loss)
-        for epoch in range(total_epoch):
-            total_cost = 0
 
-            for i in range(loop):
-                self.sess.run(self.train, feed_dict={self.X: validationX, self.Y: validationY})
-                # train_loss = self.sess.run(self.cost, feed_dict={self.X: trainX, self.Y: trainY})
-                validation_loss = self.sess.run(self.cost, feed_dict={self.X: validationX, self.Y: validationY})
+        # rmse = tf.sqrt(tf.reduce_mean(tf.square(validationY - test_validation)))  # 차의 제곱의 평균의 sqrt
+        # rmse2 = tf.reduce_mean(tf.square(validationY - test_validation))  # sum of the squares
+        # rmse3 = tf.reduce_sum(tf.square(validationY - test_validation))  # sum of the squares
 
-                # self.train_errors.append(train_loss)
-                self.validation_errors.append(validation_loss)
-                self.epoch_cost.append(total_cost)
+        # self.validation_errors = self.sess.run(rmse)
 
-        rmse = tf.sqrt(tf.reduce_mean(tf.square(validationY - test_validation)))  # 차의 제곱의 평균의 sqrt
-        rmse2 = tf.reduce_mean(tf.square(validationY - test_validation))  # sum of the squares
-        rmse3 = tf.reduce_sum(tf.square(validationY - test_validation))  # sum of the squares
-
-        self.rmse_val = self.sess.run(rmse)
-
-        print("validation rmse: {}".format(self.rmse_val))
-        print("validation mse: {}".format(self.sess.run(rmse2)))
-        print("validation sse: {}".format(self.sess.run(rmse3)))
+        # print("validation rmse: {}".format(self.validation_errors))
+        # print("validation mse: {}".format(self.sess.run(rmse2)))
+        # print("validation sse: {}".format(self.sess.run(rmse3)))
 
         fig = plot.figure()
         # plot.plot(validationY, linestyle='-')
         # plot.plot(test_validation, linestyle='--')
-        plot.plot(self.rmse_val, linestyle='--', label='validation')
-        plot.xlabel("Test Size (blue is TestY, orange is Predict")
-        plot.ylabel("Invertor Output")
-        # plot.savefig(validation_save_filename)
-        plot.show()
+        plot.plot(self.validation_errors, linestyle='--', label='validation')
+        # plot.xlabel("Test Size (blue is TestY, orange is Predict")
+        # plot.ylabel("Invertor Output")
+        plot.savefig(validation_save_filename)
+        # plot.show()
         plot.close()
 
 
@@ -161,11 +169,11 @@ class RNNLibrary:
         rmse2 = tf.reduce_mean(tf.square(testY - test_predict))  # sum of the squares
         rmse3 = tf.reduce_sum(tf.square(testY - test_predict))  # sum of the squares
 
-        self.rmse_val = self.sess.run(rmse)
+        self.test_loss = self.sess.run(rmse)
 
-        print("test rmse: {}".format(self.rmse_val))
-        print("test mse: {}".format(self.sess.run(rmse2)))
-        print("test sse: {}".format(self.sess.run(rmse3)))
+        # print("test rmse: {}".format(self.test_loss))
+        # print("test mse: {}".format(self.sess.run(rmse2)))
+        # print("test sse: {}".format(self.sess.run(rmse3)))
 
         fig = plot.figure()
         plot.plot(testY, linestyle='-')
@@ -173,5 +181,5 @@ class RNNLibrary:
         plot.xlabel("Test Size (blue is TestY, orange is Predict")
         plot.ylabel("Invertor Output")
         plot.savefig(predict_save_filename)
-        plot.show()
+        # plot.show()
         plot.close()
