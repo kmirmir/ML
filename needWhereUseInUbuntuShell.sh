@@ -1,9 +1,3 @@
-for (( layer=1; layer<=7; layer++ ))
-do
-    for (( learning=0; learning<=3; learning++))
-    do
-        python3.6 executeRNN.py "$layer" "$learning"
-    done
-done
+python3.6 moduleRNN.py
 
 echo " all process is done "

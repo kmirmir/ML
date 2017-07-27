@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4812b1d9-f894-487a-8d2d-64bba1a5b0cb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/output/epoch1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/output/epoch2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/output/epoch3.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/output/epoch5.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/output/outputDataToFourHour.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/result.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/MyLib/resultAgain.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/epoch1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/errorepoch1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/weatherYesepoch10.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/weatherYesepoch100.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/weatherYesepoch2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/weatherYesepoch50.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/weatherYesepoch62.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/output/weatherYesepoch8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/train_and_validation_csv/10total_epoch_train_and_validation.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/train_and_validation_csv/2total_epoch_train_and_validation.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/train_and_validation_csv/50total_epoch_train_and_validation.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RNN/train_and_validation_csv/total_epoch_train_and_validation.csv" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" afterPath="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" afterPath="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" afterPath="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executeRNNinUbuntuWithShell.py" afterPath="$PROJECT_DIR$/executeRNNinUbuntuWithShell.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/needWhereUseInUbuntuShell.sh" afterPath="$PROJECT_DIR$/needWhereUseInUbuntuShell.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,79 +35,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="weatherYeslr0.01layer1epoch10.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch10.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch100.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch100.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch50.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch50.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch10.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch10.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch62.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch62.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch50.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch50.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch62.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch62.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weatherYeslr0.01layer1epoch100.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch100.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_one_hot_encoding.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py">
+      <file leaf-file-name="lib_rnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_rnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+            <state relative-caret-position="380">
+              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1501150908000" expanded="true" signature="6534:6582" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lib_rnn.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_rnn.py">
+      <file leaf-file-name="lib_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="result.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/result.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weatherYeslr0.001layer1epoch200.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.001layer1epoch200.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weatherNolr0.001layer1epoch200.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/error/weatherNolr0.001layer1epoch200.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weatherYeslr0.001layer1epoch200.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.001layer1epoch200.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weatherYeslr0.001layer1epoch200.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.001layer1epoch200.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weatherYeslr0.01layer1epoch200.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch200.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moduleRNN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="organize_test.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/Data/organize_test.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="543">
+              <caret line="2203" column="35" lean-forward="true" selection-start-line="2203" selection-start-column="35" selection-end-line="2203" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -141,15 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/RNN/MyLib/the_data_part_2.csv" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/the_data_combined.csv" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/데이터/2013.csv" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/2014data.csv" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/2013data.csv" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/_crawling_weather.py" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/noeq.py" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/데이터/2222.csv" />
-        <option value="$PROJECT_DIR$/RNN/DataPreprocess/데이터/2014_2.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/newly_try.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/2014convertweather.csv" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/exe.py" />
@@ -176,8 +181,6 @@
         <option value="$PROJECT_DIR$/RNN/MyLib/result.csv" />
         <option value="$PROJECT_DIR$/RNN/output/epoch1.csv" />
         <option value="$PROJECT_DIR$/MyLib/introduce.txt" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/result.txt" />
         <option value="$PROJECT_DIR$/RNN/Data/organize.csv" />
         <option value="$PROJECT_DIR$/RNN/Data/organize_plus_weather.csv" />
         <option value="$PROJECT_DIR$/RNN/Data/organize_plus_weather_train.csv" />
@@ -189,15 +192,26 @@
         <option value="$PROJECT_DIR$/RNN/output/errorepoch50.csv" />
         <option value="$PROJECT_DIR$/RNN/output/weatherYesepoch10.csv" />
         <option value="$PROJECT_DIR$/RNN/MyLib/2total_epoch_train_and_validation.csv" />
-        <option value="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" />
         <option value="$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/RNN/total_epoch_train_and_validation.csv" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/exeShell.sh" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/aaa.py" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/moduleRNN2.py" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/exeShell2.sh" />
+        <option value="$PROJECT_DIR$/needWhereUseInUbuntuShell.sh" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/moduleRNN.py" />
+        <option value="$PROJECT_DIR$/RNN/weatherYestotal_epoch_train_and_validation.csv" />
+        <option value="$PROJECT_DIR$/RNN/weatherNototal_epoch_train_and_validation.csv" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/result.txt" />
         <option value="$PROJECT_DIR$/RNN/MyLib/lib_rnn.py" />
+        <option value="$PROJECT_DIR$/RNN/MyLib/lib_dataset.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -243,6 +257,20 @@
               <option name="myItemId" value="RNN" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="validation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -262,43 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="train_and_validation_csv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RNN" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="predict" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RNN" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="output" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,39 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DataPreprocess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RNN" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RNN" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,38 +361,21 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/RNN" />
       <recent name="$PROJECT_DIR$/RNN/Data" />
       <recent name="$PROJECT_DIR$/RNN/DataPreprocess" />
       <recent name="$PROJECT_DIR$/RNN/MyLib" />
-      <recent name="$PROJECT_DIR$/RNN/MyLib/error/epoch1" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/RNN/MyLib" />
       <recent name="$PROJECT_DIR$/RNN/DataPreprocess" />
       <recent name="$PROJECT_DIR$/RNN" />
       <recent name="$PROJECT_DIR$/RNN/MyLib/predict" />
-      <recent name="$PROJECT_DIR$/RNN/MyLib/error" />
     </key>
   </component>
   <component name="RunManager" selected="Python.moduleRNN">
-    <configuration default="false" name="_preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RNN/DataPreprocess" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tensorflow" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/DataPreprocess/_preprocess.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="_find_incorrect" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -497,6 +440,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="tensorflow" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/example/e.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="aaa" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RNN/MyLib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tensorflow" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN/MyLib/aaa.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -647,19 +607,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python._preprocess" />
-      <item index="1" class="java.lang.String" itemvalue="Python._find_incorrect" />
-      <item index="2" class="java.lang.String" itemvalue="Python.moduleRNN" />
-      <item index="3" class="java.lang.String" itemvalue="Python.multirnn" />
-      <item index="4" class="java.lang.String" itemvalue="Python.e" />
+      <item index="0" class="java.lang.String" itemvalue="Python._find_incorrect" />
+      <item index="1" class="java.lang.String" itemvalue="Python.moduleRNN" />
+      <item index="2" class="java.lang.String" itemvalue="Python.multirnn" />
+      <item index="3" class="java.lang.String" itemvalue="Python.e" />
+      <item index="4" class="java.lang.String" itemvalue="Python.aaa" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.moduleRNN" />
-        <item index="1" class="java.lang.String" itemvalue="Python.e" />
-        <item index="2" class="java.lang.String" itemvalue="Python._find_incorrect" />
-        <item index="3" class="java.lang.String" itemvalue="Python.multirnn" />
-        <item index="4" class="java.lang.String" itemvalue="Python._preprocess" />
+        <item index="1" class="java.lang.String" itemvalue="Python.aaa" />
+        <item index="2" class="java.lang.String" itemvalue="Python.e" />
+        <item index="3" class="java.lang.String" itemvalue="Python._find_incorrect" />
+        <item index="4" class="java.lang.String" itemvalue="Python.multirnn" />
       </list>
     </recent_temporary>
   </component>
@@ -686,15 +646,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37421876" sideWeight="0.47680414" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35065886" sideWeight="0.47680414" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37583002" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35325366" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35325366" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21171875" sideWeight="0.52319586" order="2" side_tool="true" content_ui="tabs" />
@@ -716,9 +676,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26294822" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35325366" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32109374" sideWeight="0.47680414" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37421876" sideWeight="0.47680414" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -740,303 +700,23 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_test.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/total_epoch_train_and_validation.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="2207" column="64" lean-forward="false" selection-start-line="2207" selection-start-column="64" selection-end-line="2207" selection-end-column="64" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/Data/organize.csv">
+    <entry file="file://$PROJECT_DIR$/RNN/Data/original_test.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="12143" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12143" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_test.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="2207" column="15" lean-forward="false" selection-start-line="2207" selection-start-column="15" selection-end-line="2207" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/result.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executeRNNinUbuntuWithShell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/needWhereUseInUbuntuShell.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/loop1000lr0.01layer1hidden10epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/errorepoch10.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/errorepoch25.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-21882">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYesloop1000lr0.01layer1hidden10epoch10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYesloop1000lr0.01layer1hidden10epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYesloop1000lr0.01layer1hidden10epoch25.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/errorepoch50.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/resultAgain.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_train.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="9935" column="18" lean-forward="true" selection-start-line="9935" selection-start-column="18" selection-end-line="9935" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYesloop1000lr0.01layer1hidden10epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherNoloop1000lr0.01layer1hidden10epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/loop100lr0.01layer1hidden10epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/loop1000lr0.01layer1hidden10epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/errorepoch1.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/1total_epoch_train_and_validation.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/10total_epoch_train_and_validation.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/weatherYesepoch2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/2total_epoch_train_and_validation.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/weatherYesepoch10.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/weatherYesepoch50.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_train.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="9935" column="37" lean-forward="false" selection-start-line="9935" selection-start-column="37" selection-end-line="9935" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch8.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/train_and_validation_csv/total_epoch_train_and_validation.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1251">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/output/weatherYesepoch100.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch100.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch50.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch62.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch10.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch100.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch50.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch62.png">
+    <entry file="file://$PROJECT_DIR$/RNN/error/originallr0.01layer1epoch100.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1046,30 +726,300 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch62.png">
+    <entry file="file://$PROJECT_DIR$/RNN/error/No0.01layer1epoch50.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch100.png">
+    <entry file="file://$PROJECT_DIR$/RNN/predict/No0.01layer1epoch50.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/DataPreprocess/_one_hot_encoding.py">
+    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch50.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/No0.01layer1epoch50.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executeRNNinUbuntuWithShell.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="54" lean-forward="false" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/aaa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exeShell.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exeShell2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moduleRNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/needWhereUseInUbuntuShell.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/output/originalepoch200.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherNo0.01layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch23.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherNolr0.01layer1epoch54.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/originaltotal_epoch_train_and_validation.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherNo0.01layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.01layer1epoch27.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148656">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_plus_weather_test.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29136">
+          <caret line="240" column="58" lean-forward="true" selection-start-line="240" selection-start-column="58" selection-end-line="240" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch50.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.001layer1epoch27.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch27.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch23.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherNolr0.01layer1epoch54.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherNolr0.01layer1epoch47.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherNo0.01layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/weatherNototal_epoch_train_and_validation.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1881">
+          <caret line="43" column="17" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/weatherYestotal_epoch_train_and_validation.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="570" column="0" lean-forward="true" selection-start-line="570" selection-start-column="0" selection-end-line="570" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch23.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/originallr0.01layer1epoch100.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/originallr0.01layer1epoch100.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherNolr0.001layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherNolr0.001layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.01layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/Data/organize_test.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="2203" column="35" lean-forward="true" selection-start-line="2203" selection-start-column="35" selection-end-line="2203" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_rnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1501150908000" expanded="true" signature="6534:6582" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/lib_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="64" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/predict/weatherYeslr0.001layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherNolr0.001layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.001layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/validation/weatherYeslr0.001layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/error/weatherYeslr0.01layer1epoch200.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/MyLib/moduleRNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>

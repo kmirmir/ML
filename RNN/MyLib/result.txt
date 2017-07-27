@@ -1,0 +1,14 @@
+layer 1, epoch 100, original , test rmse: 0.10418110230700955
+layer 1, epoch 50 test rmse: 0.11010397918468699
+
+# yes weather layer 1 epoch 200
+#                   train   validation
+# weather Yes 200,0.268497,6.23764 epoch 23  test rmse: 0.10653277546587035
+# weather Yes 200,0.273211,6.16113 epoch 27 test rmse: 0.10575712724738484
+# weather No  200,0.319821,6.2838 epoch 54  test rmse: 0.1108876921592909
+# weather No  200,0.318017,6.04751 epoch 47 test rmse: 0.10790668803323522
+
+# weather Yes  epoch 27 test rmse: 0.11506896983453689
+
+# weather Yes epoch 200 test rmse: 0.10786421486711022 lr : 0.001
+# weather No epoch 200 test rmse: 0.10428227477053185 lr : 0.001

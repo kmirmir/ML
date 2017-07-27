@@ -92,7 +92,7 @@ class Database:
             dataY.append(_y)
 
         # train/test split
-        validation_size = int(len(dataY) * 0.3)
+        validation_size = int(len(dataY) * 0.5)
         test_size = len(dataY) - validation_size
         self.validationX, self.testX = np.array(dataX[0:validation_size]), np.array(
             dataX[validation_size:len(dataX)])

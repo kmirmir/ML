@@ -106,3 +106,8 @@ RNN/data2.csv
 /RNN/MyLib/dataToHour.csv
 
 *.png
+/RNN/error/
+/RNN/output/
+/RNN/predict/
+/RNN/train_and_validation_csv/
+/RNN/validation/
